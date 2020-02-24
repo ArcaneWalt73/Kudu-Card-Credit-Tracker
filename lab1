@@ -1,0 +1,23 @@
+public class Exampleb {
+
+    public static void main(String args[]) {
+
+	int i;
+
+	System.out.println("NUM     SQR  CUBE");
+	for(i=1; i<20; i++) {
+	      System.out.println(i+"   "+i*i+"  "+i*i*i);
+	}
+
+	for(i=1; i<20; i++) {
+            System.out.println("10/"+i+" = "+10/i);
+	}
+	
+	System.out.prinln("Cage");
+
+
+    }
+
+
+}
+
