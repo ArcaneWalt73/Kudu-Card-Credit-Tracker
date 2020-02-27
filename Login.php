@@ -7,7 +7,7 @@
 	
 	$username1 = $_GET["userName"]; //The username of the person who is trying to login
 	
-	$result = mysqli_query($link, "select USERS_PASSWORD from USERS where USERNAME = '$username1'")
+	$result = mysqli_query($link, "select USERS_PASSWORD from USERS where USERS_USERNAME = '$username1'")
 	$output["result"] = $result;//putting the results from sql into an array
 	echo json_encode($output);//converting the output array into a json object
 	msqli_close($ink);
