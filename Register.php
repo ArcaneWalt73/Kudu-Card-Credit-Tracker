@@ -13,7 +13,7 @@ $email = $_POST["emailAddress"];
 $studentNo = $_POST["studentNumber"];
 $icamNo = $_POST["icamNumber"];
 
-if($result = mysqli_query($link,"insert into USERS (USERNAME, FNAME, LNAME, PASSWORD, STUDENT_NO, ICAM_NO, CONTACT_NO, EMAIL_ADDRESS) values('$username1','$fname','$lname','$password1','$studentNo','$icamNo','$contact','$email')"));
+if($result = mysqli_query($link,"insert into USERS values('$username1','$fname','$lname','$password1','$studentNo','$icamNo','$contact','$email')"));
 $output["result"] = $result;
 echo json_encode($result);
 mysqli_close($link);
