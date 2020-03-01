@@ -1,7 +1,7 @@
 <?php
-$username =  "s1876473";
-$password = "Password062";
-$database = "d1876473";
+$username =  "s1965919";
+$password = "ICTPass1670";
+$database = "d1965919";
 $link = mysqli_connect("127.0.0.1", $username, $password, $database);
 $output = array();
 $username1 = $_POST["userName"];

@@ -26,11 +26,13 @@ public class login extends AppCompatActivity
                     params.put("userName", username);
                     params.put("password", password);
 
-                    @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHTTPPost = new AsyncHttpPost("http://lamp.ms.wits.ac.za/~s1876473/.../login.php", params)
+                    @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHTTPPost = new AsyncHttpPost("http://lamp.ms.wits.ac.za/~s1965919/login.php", params)
                     {
                         @Override
                         protected void onPostExecute(String output)
                         {
+                            Cusor results = new Cusor();
+                            JSONArray output_array = new JSONArray();
                             Output_From_PHP = output;//for unit Testing purpose
                             if (output.contains(/*output from php that indicates that user does not exist*/))
                             {
@@ -66,4 +68,3 @@ public class login extends AppCompatActivity
 
         }
     }
-
