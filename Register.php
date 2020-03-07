@@ -17,4 +17,4 @@ if($result = mysqli_query($link,"insert into USERS values('$username1','$fname',
 $output["result"] = $result;
 echo json_encode($result);
 mysqli_close($link);
-?>
+
