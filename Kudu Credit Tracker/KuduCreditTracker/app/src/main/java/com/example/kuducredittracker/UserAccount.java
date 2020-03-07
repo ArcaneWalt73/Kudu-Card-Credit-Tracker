@@ -7,6 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 public class UserAccount {
     String[] userDetails;
     Context context;
@@ -52,8 +55,52 @@ public class UserAccount {
         asyncHTTPPost.execute();
     }*/
 
+    public Boolean login(final String username, final String password)
+    {
+        ContentValues params = new ContentValues();
+        params.put("userName", username);
+        params.put("password", password);
+        @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHTTPPost = new AsyncHttpPost("http://lamp.ms.wits.ac.za/~s1965919/login.php", params)
+        {
+            @Override
+            protected void onPostExecute(String output)
+            {
+                try {
+                    JSONArray output_array = new JSONArray(output);
+                    System.out.println(output);
+
+                    if (output_array.length()==0)
+                    {
+                        Toast.makeText(context, "username does not exist", Toast.LENGTH_SHORT).show();
+                        this.logged_in = false;
+                    }else {
+                        JSONObject line = output_array.getJSONObject(0);
+                        String output_password = line.getString("USERS_PASSWORD");
+                        if (output_password.equals(password))   //if password and username exist and match
+                        {
+                            Toast.makeText(context, "Welcome", Toast.LENGTH_LONG).show();
+                            this.logged_in = true;
+                        } else  //if username exist but wrong password and other errors that might occur
+                        {
+                            Toast.makeText(context, "Please try again", Toast.LENGTH_SHORT).show();
+                            this.logged_in = false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    Toast.makeText(context, "Unable to connect to the server", Toast.LENGTH_LONG).show();
+                    this.logged_in = false;
+                }
+            }
+        };
+        asyncHTTPPost.execute();
+        return asyncHTTPPost.getLogged_in();
+    }
+
+
     //array ={username, password, firstname, 2ndname, contact, email, studentNO, icamNumber}
-    public void register(String[] new_userDetails)
+    public Boolean register(String[] new_userDetails)
     {
         ContentValues params = new ContentValues();
 
@@ -66,10 +113,19 @@ public class UserAccount {
 
         @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(serverAddress, params) {
             @Override
+
+            // Sets register to true if the output string is 1
+
             protected void onPostExecute(String output) {
                 Toast.makeText(context, "Account created "+ output, Toast.LENGTH_SHORT).show();
+
+                if (output.equals("1"))
+                {
+                    this.registered = true;
+                }
             }
         };
         asyncHttpPost.execute();
+        return asyncHttpPost.getRegistered();
     }
 }

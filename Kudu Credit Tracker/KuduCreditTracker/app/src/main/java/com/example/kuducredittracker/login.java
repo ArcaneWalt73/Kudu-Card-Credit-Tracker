@@ -37,7 +37,15 @@ public class login extends AppCompatActivity
 
                     final String username = user.getText().toString();
                     final String password = pass.getText().toString();
-                    login(username, password);
+
+                    String [] info = {username, password};
+                    UserAccount userAccount = new UserAccount(info, getApplicationContext());
+
+                    if (userAccount.login(username, password)) {
+                        //Intent main =new Intent(login.this,/*new Marketplace class*/);
+                        //main.putExtra("username", username); //stores for later display use of student number
+                        //startActivity(main);
+                    }
                 }
             });
 
@@ -56,46 +64,5 @@ public class login extends AppCompatActivity
 
         }
 
-        public void login(final String username, final String password)
-        {
-            ContentValues params = new ContentValues();
-            params.put("userName", username);
-            params.put("password", password);
-            @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHTTPPost = new AsyncHttpPost("http://lamp.ms.wits.ac.za/~s1965919/login.php", params)
-            {
-                @Override
-                protected void onPostExecute(String output)
-                {
-                    try {
-                        JSONArray output_array = new JSONArray(output);
-                        System.out.println(output);
 
-                        if (output_array.length()==0)
-                        {
-                            Toast.makeText(login.this, "username does not exist", Toast.LENGTH_SHORT).show();
-                        }else {
-                            JSONObject line = output_array.getJSONObject(0);
-                            String output_password = line.getString("USERS_PASSWORD");
-                            if (output_password.equals(password))   //if password and username exist and match
-                            {
-                                //Intent main =new Intent(login.this,/*new Marketplace class*/);
-                                //main.putExtra("username", username); //stores for later display use of student number
-                                //startActivity(main);
-                                Toast.makeText(login.this, "Welcome", Toast.LENGTH_LONG).show();
-                            } else  //if username exist but wrong password and other errors that might occur
-                            {
-                                Toast.makeText(login.this, "Please try again", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        System.err.println("Unable to access JSON Array from Login.php");
-                    }
-                }
-            };
-            asyncHTTPPost.execute();
-
-
-        }
     }
