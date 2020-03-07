@@ -1,5 +1,6 @@
 package com.example.kuducredittracker;
 
+import android.accounts.Account;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
@@ -56,7 +57,7 @@ public class UserAccount {
     {
         ContentValues params = new ContentValues();
 
-        String[] labels = {"userName","password", "firstName", "lastName", "contact", "emailAddress", "studentNumber", "icamNumber"};
+        String[] labels = {"studentNumber","password", "firstName", "lastName", "contact", "emailAddress"};
 
         for(int i = 0; i < new_userDetails.length; ++i)
         {
@@ -66,8 +67,7 @@ public class UserAccount {
         @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(serverAddress, params) {
             @Override
             protected void onPostExecute(String output) {
-                //System.err.println(output);
-                Toast.makeText(context, output, Toast.LENGTH_SHORT);
+                Toast.makeText(context, "Account created "+ output, Toast.LENGTH_SHORT).show();
             }
         };
         asyncHttpPost.execute();
