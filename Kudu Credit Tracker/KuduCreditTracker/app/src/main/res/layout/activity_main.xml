@@ -134,6 +134,7 @@
             android:layout_marginLeft="5sp"
             android:layout_marginRight="5sp"
             android:textSize="20sp"
+            android:textAllCaps="false"
             android:text="Login"/>
 
         <Button
@@ -146,7 +147,8 @@
             android:layout_marginLeft="5sp"
             android:layout_marginRight="5sp"
             android:textSize="20sp"
-            android:text="Login"/>
+            android:textAllCaps="false"
+            android:text="Register"/>
 
         <LinearLayout
             android:orientation="horizontal"
