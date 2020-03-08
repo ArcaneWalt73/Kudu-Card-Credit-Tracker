@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/colorPrimary"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -18,6 +18,7 @@
         android:orientation="vertical"
         android:background="#1e376c"
         android:layout_gravity="center"
+        android:weightSum="100"
         tools:context=".login">
 
         <ImageView
@@ -27,78 +28,8 @@
             android:layout_marginBottom="20sp"
             android:layout_marginTop="20sp"
             app:srcCompat="@drawable/wits_logo"
+            android:layout_weight="50"
             android:contentDescription="@string/wits_logo" />
-
-        <!--EditText
-            android:id="@+id/student_no"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/student_no"
-            android:layout_marginBottom="10sp"
-            android:layout_marginTop="5sp"
-            android:layout_marginLeft="5sp"
-            android:layout_marginRight="5sp"
-            android:inputType="text"
-            android:importantForAutofill="no" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:layout_marginLeft="5sp"
-            android:layout_marginRight="5sp"
-            android:layout_marginTop="5sp"
-            android:layout_marginBottom="30sp"
-            android:importantForAutofill="no" />
-
-        <Button
-            android:id="@+id/login_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_corner"
-            android:text="@string/login"
-            android:layout_marginBottom="10sp"
-            android:backgroundTint="@color/olive"
-            android:textAllCaps="false"/>
-        <Button
-            android:id="@+id/login_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/olive"
-            android:text="Login"/>
-
-        <Button
-            android:id="@+id/register_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/olive"
-            android:text="Register"/>
-
-        <Button
-            android:id="@+id/register_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_corner"
-            android:text="@string/register"
-            android:backgroundTint="@color/olive"
-            android:layout_marginBottom="30sp"
-            android:textAllCaps="false"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/forgot_password"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-        </LinearLayout-->
 
         <EditText
             android:id="@+id/student_no"
@@ -110,6 +41,8 @@
             android:layout_marginLeft="5sp"
             android:layout_marginRight="5sp"
             android:textSize="20sp"
+            app:autoSizeTextType="uniform"
+            android:layout_weight="10"
             android:hint=" Student Number"/>
 
         <EditText
@@ -122,6 +55,8 @@
             android:layout_marginLeft="5sp"
             android:layout_marginRight="5sp"
             android:textSize="20sp"
+            app:autoSizeTextType="uniform"
+            android:layout_weight="10"
             android:inputType="textPassword"/>
 
         <Button
@@ -134,6 +69,8 @@
             android:layout_marginLeft="5sp"
             android:layout_marginRight="5sp"
             android:textSize="20sp"
+            app:autoSizeTextType="uniform"
+            android:layout_weight="10"
             android:textAllCaps="false"
             android:text="Login"/>
 
@@ -147,6 +84,8 @@
             android:layout_marginLeft="5sp"
             android:layout_marginRight="5sp"
             android:textSize="20sp"
+            app:autoSizeTextType="uniform"
+            android:layout_weight="10"
             android:textAllCaps="false"
             android:text="Register"/>
 
@@ -155,13 +94,15 @@
             android:layout_width="wrap_content"
             android:layout_margin="5sp"
             android:layout_gravity="center"
+            android:layout_weight="10"
             android:layout_height="wrap_content">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_margin="10sp"
                     android:text="Forgot password?"
-                    android:textSize="30sp"
+                    app:autoSizeTextType="uniform"
+                    android:textSize="25sp"
                     android:textStyle="bold" />
         </LinearLayout>
 
