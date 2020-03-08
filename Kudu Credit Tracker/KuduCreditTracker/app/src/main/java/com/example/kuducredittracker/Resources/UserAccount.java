@@ -1,10 +1,14 @@
 package com.example.kuducredittracker.Resources;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.widget.Toast;
 
+import com.example.kuducredittracker.AppEntrance.login;
+import com.example.kuducredittracker.MarketPlace.Marketplace;
 import com.example.kuducredittracker.Resources.AsyncHttpPost;
 
 import org.json.JSONArray;
@@ -90,6 +94,26 @@ public class UserAccount {
                             Toast.makeText(context, "Welcome "+username, Toast.LENGTH_LONG).show();
                             Output_From_PHP = output_password;
                             this.logged_in = true;
+
+                            //JSONObject line = userAccount.getOutput_array().getJSONObject(0);
+
+                            String firstname = line.getString("USERS_FNAME");
+                            String lastname = line.getString("USERS_LNAME");
+                            String email = line.getString("USERS_EMAIL_ADDRESS");
+                            String contact = line.getString("USERS_CONTACT_NO");
+                            //String credit = line.getString("USERS_CREDIT"); // Credit from Database
+
+                            Intent main = new Intent(context, Marketplace.class);
+                            main.putExtra("username", username); //stores for later display use of student number
+                            main.putExtra("firstname", firstname); //stores for later display use of firstname
+                            main.putExtra("lastname", lastname); //stores for later display use of lastname
+                            main.putExtra("email", email); //stores for later display use of email
+                            main.putExtra("contact", contact);
+                            //main.putExtra("credit", credit); //stores for later display use of credit
+                            //Intent main = new Intent(context, Marketplace.class);
+                            context.startActivity(main);
+
+
                         } else  //if username exist but wrong password and other errors that might occur
                         {
                             Toast.makeText(context, "Please try again", Toast.LENGTH_SHORT).show();
@@ -127,11 +151,16 @@ public class UserAccount {
             // Sets register to true if the output string is 1
 
             protected void onPostExecute(String output) {
-                Toast.makeText(context, "Account created "+ output, Toast.LENGTH_SHORT).show();
+                System.out.println(output);
 
-                if (output.equals("1"))
+                if (output.contains("1"))
                 {
+                    Toast.makeText(context, "Account created", Toast.LENGTH_SHORT).show();
+                    ((Activity)(context)).finish();
                     this.registered = true;
+                }
+                else {
+                    Toast.makeText(context, "Unable to create account", Toast.LENGTH_SHORT).show();
                 }
             }
         };

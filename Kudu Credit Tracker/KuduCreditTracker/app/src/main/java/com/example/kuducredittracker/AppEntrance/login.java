@@ -78,31 +78,18 @@ public class login extends AppCompatActivity
             final String username = user.getText().toString();
             final String password = pass.getText().toString();
 
+            if (username.equals("") || password.equals(""))
+            {
+                Toast.makeText(this, "Incorrect Input", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             String [] info = {username, password};
             UserAccount userAccount = new UserAccount(info, getApplicationContext());
+            userAccount.login(username, password);
 
-            if (userAccount.login(username, password)) {
+            
 
-                try {
-                    JSONObject line = userAccount.getOutput_array().getJSONObject(0);
-                    String firstname = line.getString("USERS_FIRSTNAME");
-                    String lastname = line.getString("USERS_LASTNAME");
-                    String email = line.getString("USERS_EMAIL");
-                    //String credit = line.getString("USERS_CREDIT"); // Credit from Database
-
-                    Intent main = new Intent(login.this, Marketplace.class);
-                    main.putExtra("username", username); //stores for later display use of student number
-                    main.putExtra("firstname", firstname); //stores for later display use of firstname
-                    main.putExtra("lastname", lastname); //stores for later display use of lastname
-                    main.putExtra("email", email); //stores for later display use of email
-                    //main.putExtra("credit", credit); //stores for later display use of credit
-                    startActivity(main);
-                }
-                catch (Exception e)
-                {
-                    Toast.makeText(this, "Unable to go to Profile", Toast.LENGTH_LONG).show();
-                }
-            }
         }
 
     }

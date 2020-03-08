@@ -31,8 +31,11 @@ public class register extends AppCompatActivity {
 
         UserAccount userAccount = new UserAccount(info, this);
 
-        if (userAccount.register(info)){
-            this.finish();
-        }
+        userAccount.register(info);
+    }
+
+    public void doCancel(View v)
+    {
+        finish();
     }
 }

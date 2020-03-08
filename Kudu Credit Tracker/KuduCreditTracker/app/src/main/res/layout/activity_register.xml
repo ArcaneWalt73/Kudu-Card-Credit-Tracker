@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +13,6 @@
     android:layout_gravity="center"
     android:orientation="vertical"
     android:background="@color/colorPrimary"
-    android:layout_margin="5sp"
     tools:context=".AppEntrance.register">
 
     <EditText
@@ -18,7 +23,7 @@
         android:layout_marginBottom="10sp"
         android:layout_marginLeft="15sp"
         android:layout_marginRight="15sp"
-        android:inputType="text"
+        android:inputType="number"
         android:backgroundTint="@color/white"
         android:hint="Student Number"/>
 
@@ -105,6 +110,8 @@
             android:textAllCaps="false"
             android:textSize="30sp"
             android:backgroundTint="@color/olive"
+            android:onClick="doCancel"
             android:text="Cancel" />
     </LinearLayout>
 </LinearLayout>
+</ScrollView>
