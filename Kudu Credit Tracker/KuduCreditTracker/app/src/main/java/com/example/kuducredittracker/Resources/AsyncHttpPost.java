@@ -18,6 +18,7 @@ public abstract class AsyncHttpPost extends AsyncTask<String, String, String> {
     private ContentValues parameters;
     protected Boolean registered; // Variable to use in order to redirect the register activity back to login
     protected Boolean logged_in;
+    protected String postOutput;
 
 
     public AsyncHttpPost(String address, ContentValues parameters)
@@ -26,6 +27,11 @@ public abstract class AsyncHttpPost extends AsyncTask<String, String, String> {
         this.parameters = parameters;
         registered = false;
         logged_in = false;
+        postOutput = "";
+    }
+
+    public String getPostOutput() {
+        return postOutput;
     }
 
     public Boolean getRegistered() {

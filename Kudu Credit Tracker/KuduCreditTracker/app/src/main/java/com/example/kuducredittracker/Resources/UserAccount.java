@@ -15,6 +15,7 @@ public class UserAccount {
     Context context;
     String serverAddress = "http://lamp.ms.wits.ac.za/~s1965919/register.php";
     String Output_From_PHP = "";
+    JSONArray output_array;
 
     //takes a list: {username,password}
     public UserAccount(String[] userDetails, Context context)
@@ -55,6 +56,14 @@ public class UserAccount {
         asyncHTTPPost.execute();
     }*/
 
+    public JSONArray getOutput_array() {
+        return output_array;
+    }
+
+    public String getOutput_From_PHP() {
+        return Output_From_PHP;
+    }
+
     public Boolean login(final String username, final String password)
     {
         ContentValues params = new ContentValues();
@@ -66,7 +75,7 @@ public class UserAccount {
             protected void onPostExecute(String output)
             {
                 try {
-                    JSONArray output_array = new JSONArray(output);
+                    output_array = new JSONArray(output);
                     System.out.println(output);
 
                     if (output_array.length()==0)
@@ -78,7 +87,8 @@ public class UserAccount {
                         String output_password = line.getString("USERS_PASSWORD");
                         if (output_password.equals(password))   //if password and username exist and match
                         {
-                            Toast.makeText(context, "Welcome", Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, "Welcome "+username, Toast.LENGTH_LONG).show();
+                            Output_From_PHP = output_password;
                             this.logged_in = true;
                         } else  //if username exist but wrong password and other errors that might occur
                         {

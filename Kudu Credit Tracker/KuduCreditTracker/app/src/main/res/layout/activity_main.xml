@@ -72,6 +72,7 @@
             app:autoSizeTextType="uniform"
             android:layout_weight="10"
             android:textAllCaps="false"
+            android:onClick="doLogin"
             android:text="Login"/>
 
         <Button
@@ -87,6 +88,7 @@
             app:autoSizeTextType="uniform"
             android:layout_weight="10"
             android:textAllCaps="false"
+            android:onClick="doRegister"
             android:text="Register"/>
 
         <LinearLayout
