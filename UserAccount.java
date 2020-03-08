@@ -1,4 +1,5 @@
-package com.example.kuducredittracker;
+//package com.example.kuducredittracker;
+package com.example.driver;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -14,18 +15,19 @@ import java.security.MessageDigest;
 public class UserAccount {
     Context context;
     String serverAddress = "http://lamp.ms.wits.ac.za/~s1965919/register.php";
-    String Output_From_PHP = "";
+    String[] user_account_info;
 
     //takes a list: {username,password}
     UserAccount(Context context)
     {
         this.context = context;
+        user_account_info = new String[]{};
     }
 
 
     public void login(String[] userDetails)
     {
-        String password = encryptor(userDetails[1]);
+        final String password = encryptor(userDetails[1]);
         ContentValues params = new ContentValues();
         params.put( "userName", userDetails[0]);
         params.put("password", password);
@@ -45,16 +47,20 @@ public class UserAccount {
                     }else {
                         JSONObject line = output_array.getJSONObject(0);
                         String output_password = line.getString("USERS_PASSWORD");
-                        System.out.println(output_password);
-                        System.out.println(password);
-
 
                         if (output_password.equals(password))//if password and username exist and match
                         {
-                            //Intent main =new Intent(login.this,/*new Marketplace class*/);
-                            //main.putExtra("username", username); //stores for later display use of student number
-                            //startActivity(main);
                             Toast.makeText(context, "The password worked", Toast.LENGTH_LONG).show();
+
+                            //Collect the data//
+                            JSONArray names_array = line.names();
+                            user_account_info = new String[names_array.length()];
+
+                            for(int i = 0; i < user_account_info.length; ++i)
+                            {
+                                user_account_info[i] = line.getString(names_array.get(i).toString());
+                            }
+
                         } else//if username exist but wrong password and other errors that might occur
                         {
                             Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
@@ -131,5 +137,11 @@ public class UserAccount {
             }
         };
         asyncHttpPost.execute();
+    }
+
+    //public void return user_account information
+    public String[] getUserInfo()
+    {
+        return user_account_info;
     }
 }
