@@ -1,19 +1,15 @@
-package com.example.kuducredittracker;
+package com.example.kuducredittracker.AppEntrance;
 
-import android.annotation.SuppressLint;
-import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import com.example.kuducredittracker.R;
+import com.example.kuducredittracker.Resources.UserAccount;
 
 public class login extends AppCompatActivity
 {
@@ -55,7 +51,7 @@ public class login extends AppCompatActivity
             register_prompt.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent register = new Intent(login.this, register.class);
+                    Intent register = new Intent(login.this, com.example.kuducredittracker.AppEntrance.register.class);
                     startActivity(register);
                 }
             });

@@ -1,11 +1,11 @@
-package com.example.kuducredittracker;
+package com.example.kuducredittracker.Resources;
 
-import android.accounts.Account;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.widget.Toast;
+
+import com.example.kuducredittracker.Resources.AsyncHttpPost;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -17,7 +17,7 @@ public class UserAccount {
     String Output_From_PHP = "";
 
     //takes a list: {username,password}
-    UserAccount(String[] userDetails, Context context)
+    public UserAccount(String[] userDetails, Context context)
     {
         this.userDetails = userDetails;
         this.context = context;

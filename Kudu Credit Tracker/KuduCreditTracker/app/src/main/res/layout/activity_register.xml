@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:background="@color/colorPrimary"
     android:layout_margin="5sp"
-    tools:context=".register">
+    tools:context=".AppEntrance.register">
 
     <EditText
         android:id="@+id/r_student_no"

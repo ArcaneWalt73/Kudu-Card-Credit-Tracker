@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Marketplace">
+    android:background="@drawable/marketplace_bg"
+    tools:context=".MarketPlace.Marketplace">
 
     <ListView
         android:layout_width="match_parent"

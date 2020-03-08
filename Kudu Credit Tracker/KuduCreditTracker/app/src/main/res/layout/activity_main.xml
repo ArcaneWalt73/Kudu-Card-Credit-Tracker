@@ -19,7 +19,7 @@
         android:background="#1e376c"
         android:layout_gravity="center"
         android:weightSum="100"
-        tools:context=".login">
+        tools:context=".AppEntrance.login">
 
         <ImageView
             android:id="@+id/imageView"

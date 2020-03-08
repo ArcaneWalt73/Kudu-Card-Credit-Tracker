@@ -1,11 +1,13 @@
-package com.example.kuducredittracker;
+package com.example.kuducredittracker.AppEntrance;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.kuducredittracker.R;
+import com.example.kuducredittracker.Resources.UserAccount;
 
 public class register extends AppCompatActivity {
 

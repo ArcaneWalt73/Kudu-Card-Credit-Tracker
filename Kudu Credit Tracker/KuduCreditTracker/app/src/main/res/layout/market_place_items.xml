@@ -35,11 +35,17 @@
             android:text="Store Name"/>
 
         <TextView
-            android:layout_weight="9"
+            android:layout_weight="8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5sp"
             android:padding="5sp"
             android:text="Store Description"/>
+        <TextView
+            android:id="@+id/m_no_of_items"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Number of Items" />
     </LinearLayout>
 </LinearLayout>

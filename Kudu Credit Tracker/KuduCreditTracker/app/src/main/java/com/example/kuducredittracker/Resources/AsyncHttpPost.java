@@ -1,4 +1,4 @@
-package com.example.kuducredittracker;
+package com.example.kuducredittracker.Resources;
 
 
 import android.content.ContentValues;

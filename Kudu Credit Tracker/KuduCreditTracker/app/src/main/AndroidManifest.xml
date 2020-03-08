@@ -14,10 +14,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".item_info"></activity>
         <activity android:name=".Items" />
-        <activity android:name=".Marketplace" />
+        <activity android:name=".MarketPlace.Marketplace" />
         <activity android:name=".Profile" />
-        <activity android:name=".register" />
-        <activity android:name=".login">
+        <activity android:name=".AppEntrance.register" />
+        <activity android:name=".AppEntrance.login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
