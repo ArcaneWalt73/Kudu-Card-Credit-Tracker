@@ -1,32 +1,17 @@
 <?php
-
-	$username =  "s1965919";//The username for mysql
-
-	$password = "ICTPass1670";
-
-	$database = "d1965919";
-
-	#echo "hello";
-
-	$link = mysqli_connect("127.0.0.1", $username, $password, $database);
-
-	$output = array();
-	$username1 = $_POST["userName"]; //The username of the person who is trying to login
-
-	if ($result = mysqli_query($link, "select * from USERS where USERS_USERNAME='$username1';"))
-	{
-		while ($row = $result -> fetch_assoc())
-		{
-	                $output[] = $row;
-        	}
+$username =  "tshego";//The username for mysql
+$password = "password123";
+$database = "kudu_card_tracker";
+$link = mysqli_connect("127.0.0.1", $username, $password, $database);
+$output = array();
+$studentNo = $_POST["studentNumber"]; //The username of the person who is trying to login
+$password1 = $_POST["password"]
+if ($result = mysqli_query($link, "select * from STUDENTS where STUDENT_NO='$studentNo'")){
+	if(password_verify($password,$result)){
+		echo json_encode("true");
 	}
-
-
-	//$output["result"] = $result;//putting the results from sql into an array
-
-	//if ($result = mysqli_query($link))
-
-	echo json_encode($output);//converting the output array into a json object
-
-	#msqli_close($link);
+	else{
+		echo json_encode("false");
+	}
+	msqli_close($link);
 ?>
