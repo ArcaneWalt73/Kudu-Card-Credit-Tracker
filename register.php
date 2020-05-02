@@ -16,4 +16,4 @@ if($result = mysqli_query($link,"insert into STUDENTS values('$studentNo','$fnam
 $output["result"] = $result;
 echo json_encode($result);
 mysqli_close($link);
-
+?>
