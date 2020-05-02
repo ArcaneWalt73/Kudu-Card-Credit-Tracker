@@ -1,4 +1,4 @@
-package com.example.kuducard.Resources;
+package com.example.kuducredittracker.Resources;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
