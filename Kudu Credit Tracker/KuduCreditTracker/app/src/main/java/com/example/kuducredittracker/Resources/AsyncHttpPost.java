@@ -1,4 +1,4 @@
-package com.example.kuducredittracker;
+package com.example.kuducredittracker.Resources;
 
 
 import android.content.ContentValues;
@@ -14,14 +14,32 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public abstract class AsyncHttpPost extends AsyncTask<String, String, String> {
-    String address;
-    ContentValues parameters;
+    private String address;
+    private ContentValues parameters;
+    protected Boolean registered; // Variable to use in order to redirect the register activity back to login
+    protected Boolean logged_in;
+    protected String postOutput;
 
 
     public AsyncHttpPost(String address, ContentValues parameters)
     {
         this.address = address;
         this.parameters = parameters;
+        registered = false;
+        logged_in = false;
+        postOutput = "";
+    }
+
+    public String getPostOutput() {
+        return postOutput;
+    }
+
+    public Boolean getRegistered() {
+        return registered;
+    }
+
+    public Boolean getLogged_in() {
+        return logged_in;
     }
 
     @Override

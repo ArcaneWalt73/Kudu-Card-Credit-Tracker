@@ -1,4 +1,4 @@
-package com.example.kuducard.Resources;
+package com.example.kuducredittracker.Resources;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -26,8 +26,8 @@ public class UserAccount {
 
     public UserAccount(String[] userDetails, Context context)
     {
+        this.userDetails = userDetails;
         this.context = context;
-        user_account_info = new String[]{};
     }
 
     public Boolean login(final String username, final String password)
@@ -85,42 +85,6 @@ public class UserAccount {
         return asyncHTTPPost.getLogged_in();
     }
 
-    public static String encryptor(String string)
-    {
-        String encString = "";
-
-        try
-        {
-            // Create MessageDigest instance for MD5
-            MessageDigest md = MessageDigest.getInstance("MD5");
-
-            //Add password bytes to digest
-            md.update(string.getBytes());
-
-            //Get the hash's bytes
-            byte[] bytes = md.digest(); //This bytes[] has bytes in decimal format;
-
-            //Convert it to hexadecimal format
-            StringBuilder sb = new StringBuilder();
-            for(int i=0; i< bytes.length ;i++)
-            {
-                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-            }
-
-            //Get complete hashed password in hex format
-            encString = sb.toString();
-
-
-
-        }catch(Exception e)
-        {
-            e.printStackTrace();
-        }
-
-
-
-        return  encString;
-    }
 
     //array ={username, password, firstname, 2ndname, contact, email, studentNO, icamNumber}
     public Boolean register(String[] new_userDetails)
@@ -133,10 +97,6 @@ public class UserAccount {
         String hashed_pass = encryptor(new_userDetails[1]);
         new_userDetails[1] = hashed_pass;
 
-
-        //hasing the password
-        //String hashed_pass = encryptor(new_userDetails[1]);
-        //new_userDetails[1] = hashed_pass;
 
         for(int i = 0; i < new_userDetails.length; ++i)
         {
