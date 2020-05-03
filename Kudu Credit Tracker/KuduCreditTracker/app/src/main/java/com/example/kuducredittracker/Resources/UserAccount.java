@@ -9,6 +9,8 @@ import android.os.AsyncTask;
 import android.widget.Toast;
 
 
+import com.example.kuducredittracker.Profile;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -34,16 +36,17 @@ public class UserAccount {
     {
         final String encrypted_password = encryptor(password); //uses the md5 encryptor to pass the encrypted password
         ContentValues params = new ContentValues();
-        params.put("userName", username);
+        params.put("studentNumber", username);
         params.put("password", encrypted_password);
         @SuppressLint("StaticFieldLeak") final AsyncHttpPost asyncHTTPPost = new AsyncHttpPost(login_serverAddress, params)
         {
             @Override
             protected void onPostExecute(String output)
             {
+                System.err.println(output); // given output and app comparison are not the same
+                                            // JSON within the try block gives a JSONException
                 try {
                     output_array = new JSONArray(output);
-                    System.out.println(output);
 
                     if (output_array.length()==0)
                     {
@@ -67,6 +70,10 @@ public class UserAccount {
                                 user_account_info[i] = line.getString(names_array.get(i).toString()); //now to access it use the getUserInfor method!
                             }
 
+                            Intent main = new Intent(context, Profile.class);
+                            main.putExtra("username", username); //stores for later display use of student number
+                            context.startActivity(main);
+
                         } else  //if username exist but wrong password and other errors that might occur
                         {
                             Toast.makeText(context, "Please try again", Toast.LENGTH_SHORT).show();
@@ -76,6 +83,7 @@ public class UserAccount {
                 }
                 catch (Exception e)
                 {
+                    e.printStackTrace();
                     Toast.makeText(context, "Unable to connect to the server", Toast.LENGTH_LONG).show();
                     this.logged_in = false;
                 }
@@ -123,7 +131,7 @@ public class UserAccount {
             // Sets register to true if the output string is 1
 
             protected void onPostExecute(String output) {
-                System.err.println(output); // output returned is false and register function expects true
+                System.err.println(output); // output returned is false and register function expects 1
 
                 if (output.contains("1"))
                 {
