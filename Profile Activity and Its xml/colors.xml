@@ -23,14 +23,11 @@
     <color name="colorAccent">#0000FF</color>
     <color name="colorPrimaryDark">#000080</color>
     <color name="black">#000000</color>
-<<<<<<< HEAD
+    <color name="colorPrimaryDark">#292B3D</color>
     <color name="graylight">#FAFAFA</color>
-    <color name="darkbluebackground">#3F51B5</color>
-
-=======
     <color name="startblue">#09C6DF</color>
     <color name="endblue">#0BCCE6</color>
-    <color name="graylight">#FAFAFA</color>
+    <color name="colorAccent">#D81B60</color>
     <color name="darkbluebackground">#3F51B5</color>
->>>>>>> ba5ebbb05825d65d275b422190a5476dfba060e5
+
 </resources>

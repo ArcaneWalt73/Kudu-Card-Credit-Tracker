@@ -5,16 +5,25 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+<<<<<<< HEAD
 import android.widget.Toast;
 
 import com.example.kuducredittracker.AppEntrance.login;
 import com.example.kuducredittracker.MarketPlace.Marketplace;
 import com.example.kuducredittracker.Profile;
 import com.example.kuducredittracker.Resources.AsyncHttpPost;
+=======
+import android.os.AsyncTask;
+import android.widget.Toast;
+
+
+import com.example.kuducredittracker.Profile;
+>>>>>>> ba5ebbb05825d65d275b422190a5476dfba060e5
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+<<<<<<< HEAD
 public class UserAccount {
     String[] userDetails;
     Context context;
@@ -23,12 +32,27 @@ public class UserAccount {
     JSONArray output_array;
 
     //takes a list: {username,password}
+=======
+import java.security.MessageDigest;
+
+public class UserAccount {
+    private String[] userDetails; //used to store login details
+    private String[] user_account_info; //stores user information(names, contact number etc)
+
+    private Context context;
+    private String register_serverAddress = "http://lamp.ms.wits.ac.za/~s1965919/register.php";
+    private String login_serverAddress = "http://lamp.ms.wits.ac.za/~s1965919/login.php";
+    private String Output_From_PHP = "";
+    private JSONArray output_array;
+
+>>>>>>> ba5ebbb05825d65d275b422190a5476dfba060e5
     public UserAccount(String[] userDetails, Context context)
     {
         this.userDetails = userDetails;
         this.context = context;
     }
 
+<<<<<<< HEAD
     /*
     public Boolean login()
     {
@@ -75,10 +99,20 @@ public class UserAccount {
         params.put("studentNumber", username);
         params.put("password", password);
         @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHTTPPost = new AsyncHttpPost("http://lamp.ms.wits.ac.za/~s1965919/login.php", params)
+=======
+    public Boolean login(final String username, final String password)
+    {
+        final String encrypted_password = encryptor(password); //uses the md5 encryptor to pass the encrypted password
+        ContentValues params = new ContentValues();
+        params.put("studentNumber", username);
+        params.put("password", encrypted_password);
+        @SuppressLint("StaticFieldLeak") final AsyncHttpPost asyncHTTPPost = new AsyncHttpPost(login_serverAddress, params)
+>>>>>>> ba5ebbb05825d65d275b422190a5476dfba060e5
         {
             @Override
             protected void onPostExecute(String output)
             {
+<<<<<<< HEAD
 
 
                     if (output.contains("false"))
@@ -124,6 +158,69 @@ public class UserAccount {
             }
         };
         asyncHTTPPost.execute();
+=======
+                System.err.println(output); // given output and app comparison are not the same
+                                            // JSON within the try block gives a JSONException
+                try {
+                    output_array = new JSONArray(output);
+
+                    if (output_array.length()==0)
+                    {
+                        Toast.makeText(context, "username does not exist", Toast.LENGTH_SHORT).show();
+                        this.logged_in = false;
+                    }else {
+                        JSONObject line = output_array.getJSONObject(0);
+                        String output_password = line.getString("USERS_PASSWORD");
+                        if (output_password.equals(encrypted_password))   //if password and username exist and match
+                        {
+                            Toast.makeText(context, "Welcome "+username, Toast.LENGTH_LONG).show();
+                            Output_From_PHP = output_password;
+                            this.logged_in = true;
+
+                            //Collect the data//
+                            JSONArray names_array = line.names(); //stores the column names of USERS_USER_ACCOUNT
+                            user_account_info = new String[names_array.length()];
+
+                            for(int i = 0; i < user_account_info.length; ++i) //stores the values of each column in the user's row
+                            {
+                                user_account_info[i] = line.getString(names_array.get(i).toString()); //now to access it use the getUserInfor method!
+                            }
+
+                            Intent main = new Intent(context, Profile.class);
+                            main.putExtra("username", username); //stores for later display use of student number
+                            context.startActivity(main);
+
+                        } else  //if username exist but wrong password and other errors that might occur
+                        {
+                            Toast.makeText(context, "Please try again", Toast.LENGTH_SHORT).show();
+                            this.logged_in = false;
+                        }
+                    }
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                    Toast.makeText(context, "Unable to connect to the server", Toast.LENGTH_LONG).show();
+                    this.logged_in = false;
+                }
+            }
+        };
+        asyncHTTPPost.execute();
+        /*try {  // wait for the asyncHHTPPost to finish executing
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    while (asyncHTTPPost.getStatus() == AsyncTask.Status.RUNNING){
+
+                    }
+                }
+            });
+            t.start();
+        }
+        catch (Exception e) {
+            System.err.println("A Thread in UserAccount.login crashed");
+        }*/
+>>>>>>> ba5ebbb05825d65d275b422190a5476dfba060e5
         return asyncHTTPPost.getLogged_in();
     }
 
@@ -135,20 +232,38 @@ public class UserAccount {
 
         String[] labels = {"studentNumber","password", "firstName", "lastName", "contact", "emailAddress"};
 
+<<<<<<< HEAD
+=======
+        //hashing the password and passing that to the server insted of plaintext
+        String hashed_pass = encryptor(new_userDetails[1]);
+        new_userDetails[1] = hashed_pass;
+
+
+>>>>>>> ba5ebbb05825d65d275b422190a5476dfba060e5
         for(int i = 0; i < new_userDetails.length; ++i)
         {
             params.put(labels[i], new_userDetails[i]);
         }
 
+<<<<<<< HEAD
         @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(serverAddress, params) {
+=======
+        @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(register_serverAddress, params) {
+>>>>>>> ba5ebbb05825d65d275b422190a5476dfba060e5
             @Override
 
             // Sets register to true if the output string is 1
 
             protected void onPostExecute(String output) {
+<<<<<<< HEAD
                 System.out.println(output);
 
                 if (output.contains("true"))
+=======
+                System.err.println(output); // output returned is false and register function expects 1
+
+                if (output.contains("1"))
+>>>>>>> ba5ebbb05825d65d275b422190a5476dfba060e5
                 {
                     Toast.makeText(context, "Account created", Toast.LENGTH_SHORT).show();
                     ((Activity)(context)).finish();
@@ -162,4 +277,51 @@ public class UserAccount {
         asyncHttpPost.execute();
         return asyncHttpPost.getRegistered();
     }
+<<<<<<< HEAD
+=======
+
+    //returns the user's account info string array
+    public String[] getUserAccountInfo()
+    {
+        return user_account_info;
+    }
+
+    private static String encryptor(String string)
+    {
+        String encString = "";
+
+        try
+        {
+            // Create MessageDigest instance for MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+
+            //Add password bytes to digest
+            md.update(string.getBytes());
+
+            //Get the hash's bytes
+            byte[] bytes = md.digest(); //This bytes[] has bytes in decimal format;
+
+            //Convert it to hexadecimal format
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i< bytes.length ;i++)
+            {
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+
+            //Get complete hashed password in hex format
+            encString = sb.toString();
+
+
+
+        }catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
+
+        return  encString;
+    }
+
+>>>>>>> ba5ebbb05825d65d275b422190a5476dfba060e5
 }
