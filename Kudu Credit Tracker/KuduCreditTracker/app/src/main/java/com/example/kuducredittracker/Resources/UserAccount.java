@@ -5,9 +5,9 @@ import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.example.kuducard.MarketPlace.Marketplace;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -15,14 +15,14 @@ import org.json.JSONObject;
 import java.security.MessageDigest;
 
 public class UserAccount {
-    String[] userDetails; //used to store login details
+    private String[] userDetails; //used to store login details
     private String[] user_account_info; //stores user information(names, contact number etc)
 
-    Context context;
-    String register_serverAddress = "http://lamp.ms.wits.ac.za/~s1965919/register.php";
-    String login_serverAddress = "http://lamp.ms.wits.ac.za/~s1965919/login.php";
-    String Output_From_PHP = "";
-    JSONArray output_array;
+    private Context context;
+    private String register_serverAddress = "http://lamp.ms.wits.ac.za/~s1965919/register.php";
+    private String login_serverAddress = "http://lamp.ms.wits.ac.za/~s1965919/login.php";
+    private String Output_From_PHP = "";
+    private JSONArray output_array;
 
     public UserAccount(String[] userDetails, Context context)
     {
@@ -36,7 +36,7 @@ public class UserAccount {
         ContentValues params = new ContentValues();
         params.put("userName", username);
         params.put("password", encrypted_password);
-        @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHTTPPost = new AsyncHttpPost(login_serverAddress, params)
+        @SuppressLint("StaticFieldLeak") final AsyncHttpPost asyncHTTPPost = new AsyncHttpPost(login_serverAddress, params)
         {
             @Override
             protected void onPostExecute(String output)
@@ -82,6 +82,20 @@ public class UserAccount {
             }
         };
         asyncHTTPPost.execute();
+        /*try {  // wait for the asyncHHTPPost to finish executing
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    while (asyncHTTPPost.getStatus() == AsyncTask.Status.RUNNING){
+
+                    }
+                }
+            });
+            t.start();
+        }
+        catch (Exception e) {
+            System.err.println("A Thread in UserAccount.login crashed");
+        }*/
         return asyncHTTPPost.getLogged_in();
     }
 
@@ -109,7 +123,7 @@ public class UserAccount {
             // Sets register to true if the output string is 1
 
             protected void onPostExecute(String output) {
-                System.out.println(output);
+                System.err.println(output); // output returned is false and register function expects true
 
                 if (output.contains("1"))
                 {

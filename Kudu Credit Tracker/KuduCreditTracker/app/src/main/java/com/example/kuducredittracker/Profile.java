@@ -13,8 +13,8 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
     }
 
-    public void doNext(View v)
-    {
-        // Go to MarketPlace
+    public void Shop(View v){
+        //Intent register = new Intent(MainActivity.this, //marketPlace//);
+        //startActivity(register);
     }
 }
