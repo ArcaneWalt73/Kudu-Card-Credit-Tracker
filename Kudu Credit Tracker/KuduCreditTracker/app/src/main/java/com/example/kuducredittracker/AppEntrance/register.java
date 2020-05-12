@@ -29,9 +29,13 @@ public class register extends AppCompatActivity {
         EditText email = (EditText) findViewById(R.id.email);
         String [] info = {student_no.getText().toString(), password.getText().toString(), name.getText().toString(), surname.getText().toString(), contact.getText().toString(), email.getText().toString()};
 
-        UserAccount userAccount = new UserAccount(info, this);
-
-        userAccount.register(info);
+        if (!UserAccount.emailChecker(email.getText().toString())) {
+            email.setError("Incorrect Email Input");
+        }
+        if (UserAccount.emailChecker(email.getText().toString())) {
+            UserAccount userAccount = new UserAccount(info, this);
+            userAccount.register(info);
+        }
     }
 
     public void doCancel(View v)

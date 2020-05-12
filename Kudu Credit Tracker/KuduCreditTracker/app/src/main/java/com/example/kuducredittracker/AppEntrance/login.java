@@ -88,11 +88,6 @@ public class login extends AppCompatActivity
             UserAccount userAccount = new UserAccount(info, getApplicationContext());
             userAccount.login(username, password);
 
-<<<<<<< HEAD
-            
-
-=======
->>>>>>> ba5ebbb05825d65d275b422190a5476dfba060e5
         }
 
     }

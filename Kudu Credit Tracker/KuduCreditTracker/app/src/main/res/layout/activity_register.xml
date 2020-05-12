@@ -71,7 +71,7 @@
         android:layout_marginBottom="10sp"
         android:layout_marginLeft="15sp"
         android:layout_marginRight="15sp"
-        android:inputType="textEmailAddress"
+        android:inputType="textWebEmailAddress"
         android:backgroundTint="@color/white"
         android:hint="Email"/>
 
