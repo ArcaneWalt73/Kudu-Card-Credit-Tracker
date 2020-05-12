@@ -34,6 +34,7 @@
                 android:layout_marginTop="35dp"
                 android:contentDescription="Image of User" />
             <TextView
+                android:id="@+id/profile_username"
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

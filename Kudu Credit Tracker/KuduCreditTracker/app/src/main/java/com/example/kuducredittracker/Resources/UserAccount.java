@@ -59,8 +59,8 @@ public class UserAccount {
                     this.logged_in = true; // The user successfully logged in
 
                     Intent main = new Intent(context, Profile.class);
-                    main.putExtra("username", username); // carry along the username
                     main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    main.putExtra("username", username); // carry along the username
                     context.startActivity(main); // Proceed to the user's profile
                 }
 
@@ -79,9 +79,8 @@ public class UserAccount {
         String[] labels = {"studentNumber","password", "firstName", "lastName", "contact", "emailAddress"};
 
         //hashing the password and passing that to the server insted of plaintext
-        String hashed_pass = encryptor(new_userDetails[1]);
-        new_userDetails[1] = hashed_pass;
-
+        //String hashed_pass = encryptor(new_userDetails[1]);
+        //new_userDetails[1] = hashed_pass;
 
         for(int i = 0; i < new_userDetails.length; ++i)
         {
@@ -154,7 +153,7 @@ public class UserAccount {
                 return false;
             String [] domain = remainder[1].split("\\.");
             printStringArray(domain);
-            if (domain.length >= 2 && (domain[0].equals("") || domain[1].equals(""))) {
+            if (domain.length >= 2 && !(domain[0].equals("") || domain[1].equals(""))) {
                 if (domain[domain.length - 1].equals("com") || domain[domain.length - 1].equals("za")) {
                     return true;
                 }
