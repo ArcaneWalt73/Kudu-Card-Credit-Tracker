@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorPrimary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        android:background="#1e376c"
+        android:layout_gravity="center"
+        android:weightSum="100"
+        tools:context=".AppEntrance.login">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:layout_marginTop="20sp"
+            app:srcCompat="@drawable/wits_logo"
+            android:layout_weight="50"
+            android:contentDescription="@string/wits_logo" />
+
+        <EditText
+            android:id="@+id/student_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:inputType="number"
+            android:layout_marginBottom="10sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:textSize="20sp"
+            app:autoSizeTextType="uniform"
+            android:layout_weight="10"
+            android:hint=" Student Number"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:hint="@string/password"
+            android:layout_marginBottom="10sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:textSize="20sp"
+            app:autoSizeTextType="uniform"
+            android:layout_weight="10"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/login_btm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/olive"
+            android:layout_marginBottom="10sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:textSize="20sp"
+            app:autoSizeTextType="uniform"
+            android:layout_weight="10"
+            android:textAllCaps="false"
+            android:onClick="doLogin"
+            android:text="Login"/>
+
+        <Button
+            android:id="@+id/register_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:backgroundTint="@color/olive"
+            android:layout_marginBottom="10sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="5sp"
+            android:textSize="20sp"
+            app:autoSizeTextType="uniform"
+            android:layout_weight="10"
+            android:textAllCaps="false"
+            android:onClick="doRegister"
+            android:text="Register"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_margin="5sp"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10sp"
+                    android:text="Forgot password?"
+                    app:autoSizeTextType="uniform"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+        </LinearLayout>
+
+</LinearLayout>
+</ScrollView>
