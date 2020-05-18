@@ -47,6 +47,9 @@ public class StoreAdapter extends ArrayAdapter<Store> {
         TextView desc = (TextView) listItem.findViewById(R.id.m_store_desc);
         desc.setText(currentStore.getDescription());
 
+        TextView best = (TextView)listItem.findViewById(R.id.m_best_item);
+        best.setText(currentStore.getShopBestItem().getName());
+
         return listItem;
     }
 }

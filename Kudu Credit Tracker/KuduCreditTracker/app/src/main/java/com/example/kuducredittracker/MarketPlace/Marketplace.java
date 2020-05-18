@@ -22,10 +22,10 @@ public class Marketplace extends AppCompatActivity {
         setContentView(R.layout.activity_marketplace);
         listView = (ListView)findViewById(R.id.m_listview);
 
-        Stores.add(new Store("Clothing", "Cloths and other wearable stuff", R.drawable.clothing));
-        Stores.add(new Store("Ipod Text", "This is a text Editor", R.drawable.ipod));
-        Stores.add(new Store("Music", "Stores music from Artists", R.drawable.music));
-        Stores.add(new Store("Setting", "Configure Data", R.drawable.settings));
+        Stores.add(new Store("Clothing", "Clothes and other wearable stuff", R.drawable.clothing, new ArrayList<Item>()));
+        Stores.add(new Store("Ipod Text", "This is a text Editor", R.drawable.ipod, new ArrayList<Item>()));
+        Stores.add(new Store("Music", "Stores music from Artists", R.drawable.music, new ArrayList<Item>()));
+        Stores.add(new Store("Setting", "Configure Data", R.drawable.settings, new ArrayList<Item>()));
 
         storeAdapter = new StoreAdapter(this, Stores);
         listView.setAdapter(storeAdapter);
