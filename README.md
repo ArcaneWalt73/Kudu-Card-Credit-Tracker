@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/github/The-Combrades/Kudu-Card-Credit-Tracker/orb.svg?style=svg)](https://circleci.com/github/The-Combrades/Kudu-Card-Credit-Tracker/orb)
+<a href="https://circleci.com/github/The-Combrades/Kudu-Card-Credit-Tracker"><img src="https://circleci.com/github/The-Combrades/Kudu-Card-Credit-Tracker.svg?style=svg" alt='CircleCi status'></a>
 <a href='https://coveralls.io/github/The-Combrades/Kudu-Card-Credit-Tracker?branch=master'><img src='https://coveralls.io/repos/github/The-Combrades/Kudu-Card-Credit-Tracker/badge.svg?branch=master' alt='Coverage Status' /></a>
 Kudu Card Tracker
 =====================
