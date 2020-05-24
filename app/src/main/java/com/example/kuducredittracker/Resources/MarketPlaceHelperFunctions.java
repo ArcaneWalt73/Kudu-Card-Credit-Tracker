@@ -22,7 +22,7 @@ public class MarketPlaceHelperFunctions {
     {
         ContentValues params = new ContentValues();
 
-        String[] labels = {"itemName","itemPrice", "itemDescription", "itemCategory"};
+        String[] labels = {"itemName","itemPrice", "itemDescription", "itemShop"};
 
         for(int i = 0; i < new_itemDetails.length; ++i)
         {
@@ -53,11 +53,11 @@ public class MarketPlaceHelperFunctions {
 
     //Append your rating
 
-    public void appendRating(Integer rating)//rating system from 0-5(o worst 5 best)
+    public void appendRating(double rating)//rating system from 0-5(o worst 5 best)
     {
         ContentValues params = new ContentValues();
 
-        String label = "ranting";
+        String label = "rating";
 
         params.put(label, rating);
 

@@ -22,6 +22,7 @@ public class UserAccount {
     private String login_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/login.php";
     private String Output_From_PHP = "";
     private JSONArray output_array;
+    private String session_username; //will be needed to get ratings
 
     public UserAccount(String[] userDetails, Context context)
     {
@@ -37,6 +38,11 @@ public class UserAccount {
         return Output_From_PHP;
     }
 
+    //returns the session username
+    public String getUserName()
+    {
+        return session_username;
+    }
 
     /* Login Function */
     public Boolean login(final String username, final String password)
@@ -58,6 +64,7 @@ public class UserAccount {
                     Toast.makeText(context, "Welcome "+username, Toast.LENGTH_LONG).show();
                     this.logged_in = true; // The user successfully logged in
 
+                    session_username = username; //set the username for this login session
                     Intent main = new Intent(context, Profile.class);
                     main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     main.putExtra("username", username); // carry along the username

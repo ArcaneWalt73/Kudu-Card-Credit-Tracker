@@ -43,7 +43,7 @@
             android:padding="5sp"
             android:text="Store Description"/>
         <TextView
-            android:id="@+id/m_no_of_items"
+            android:id="@+id/m_best_item"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
