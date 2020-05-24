@@ -9,7 +9,7 @@ $id = $_POST["itemId"]; // id of the item
 $category = $_POST["itemCategory"];
 
 if($category == 'clothes'){
-        if ($result =mysqli_query($link,"select AVG(RATE) from CLOTHES_RATINGS where CLOTHES_ID='$id'")){
+        if ($result =mysqli_query($link,"select AVG(RATING) from CLOTHES_RATINGS where CLOTHES_ID='$id'")){
                 while($row=$result->fetch_assoc()){
                         $output[] = $row;
                 }
@@ -17,7 +17,7 @@ if($category == 'clothes'){
         echo json_encode($output);
 }
 else if ($category == 'food'){
-        if ($result =mysqli_query($link,"select AVG(RATE) from FOOD_RATINGS where FOOD_ID='$id'")){
+        if ($result =mysqli_query($link,"select AVG(RATING) from FOOD_RATINGS where FOOD_ID='$id'")){
                 while($row=$result->fetch_assoc()){
                         $output[] = $row;
                 }
@@ -26,7 +26,7 @@ else if ($category == 'food'){
 }
 
 else if($category == 'stationary'){
-        if ($result =mysqli_query($link,"select AVG(RATE) from STATIONARY_RATINGS where STATIONARY_ID='$id'")){
+        if ($result =mysqli_query($link,"select AVG(RATING) from STATIONARY_RATINGS where STATIONARY_ID='$id'")){
                 while($row=$result->fetch_assoc()){
                         $output[] = $row;
                 }
@@ -34,7 +34,7 @@ else if($category == 'stationary'){
         echo json_encode($output);
 }
 else if($category == 'event'){
-        if ($result =mysqli_query($link,"select AVG(RATE) from EVENT_RATINGS where EVENTS_ID='$id'")){
+        if ($result =mysqli_query($link,"select AVG(RATING) from EVENT_RATINGS where EVENTS_ID='$id'")){
                 while($row=$result->fetch_assoc()){
                         $output[] = $row;
                 }
