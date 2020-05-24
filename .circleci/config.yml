@@ -2,9 +2,12 @@
 version: 2.1
 # Use a package of configuration called an orb.
 orbs:
- welcome: circleci/welcome-orb@0.4.1
 
-workflow:
- welcome:
-   jobs:
-     - welcome/run
+  welcome: circleci/welcome-orb@0.4.1
+
+workflows:
+
+  welcome:
+  
+    jobs:
+      - welcome/run
