@@ -35,10 +35,10 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Agree to sdk licences
-          command: y y y y y y y | sdkmanager --licenses
+          command: echo y | sdkmanager --licenses
       - run:
           name: Update sdk licences
-          command: y | sdkmanager --update || exit 0
+          command: echo y | sdkmanager --update || exit 0
       - run:
           name: Run Tests
           command: ./gradlew lint test
