@@ -2,13 +2,9 @@
 version: 2.1
 # Use a package of configuration called an orb.
 orbs:
- android: circleci/android@0.2.0
+ welcome: circleci/orb@0.4.1
 
-jobs:
- build:
-   executor: android/android
-
-   steps:
-     - checkout
-     - run:
-         command: ./gradlew build
+workflow:
+ welcome:
+   jobs:
+     - welcome/run
