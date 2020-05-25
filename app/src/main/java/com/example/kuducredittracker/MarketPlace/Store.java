@@ -23,10 +23,10 @@ public class Store {
 	    }
 
 	//add items to store instance
-    public void addItem(String name, float price)
+    public void addItem(String name, float price, String itemCategory, double rating)
     {
         String[] details = {name, price + ""};
-        items.add(new Item(name, price)); //add to array
+        items.add(new Item(name, price, itemCategory, rating)); //add to array
         helperFunctions.addItem(details); //add to the database
 
     }

@@ -8,10 +8,10 @@
     android:background="@drawable/market_place_background"
     tools:context=".MarketPlace.Marketplace">
 
-    <ListView
+    <!--ListView
         android:id="@+id/m_listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" /-->
 
     <GridView
         android:id="@+id/marketplace_gridview"
