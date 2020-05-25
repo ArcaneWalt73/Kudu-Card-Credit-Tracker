@@ -55,33 +55,34 @@ public class Marketplace extends AppCompatActivity {
         refresh.setVisibility(View.INVISIBLE);
 
         //the names of the stores in the database
-//        String store0 = "Clothing", store1 = "Ipod Text", store2 = "Music", store3 = "Setting";
-//
-//        Stores.add(new Store(store0, "Clothes and other wearable stuff", R.drawable.clothing, new ArrayList<Item>()));
-//        Stores.add(new Store(store1, "This is a text Editor", R.drawable.ipod, new ArrayList<Item>()));
-//        Stores.add(new Store(store2, "Stores music from Artists", R.drawable.music, new ArrayList<Item>()));
-//        Stores.add(new Store(store3, "Configure Data", R.drawable.settings, new ArrayList<Item>()));
+        String store0 = "Clothing", store1 = "Stationery", store2 = "Music", store3 = "Setting";
 
-        ArrayList<String[]> stores = getStoresFromDB(); //get the store names from db
+        ArrayList<ArrayList<Item>> itemsForStores = new ArrayList<ArrayList<Item>>(); //get the store names from db
         ArrayList<Item> allItems = getItemsFromDB(); //get all items from db
 
-        //create stores using store names and add their item arrays
-        for(int i = 0; i < stores.size(); ++i)
+        for(int j = 0; j < allItems.size(); ++j)
         {
-            ArrayList<Item> storeItems = new ArrayList<Item>(); //current store's items
-            for(int j = 0; j < allItems.size(); ++j)
+            //if the item's store name matches current store name then add it to current store's items
+            if(allItems.get(j).getItemCategory().equals(store0))
             {
-                //if the item's store name matches current store name then add it to current store's items
-                if(allItems.get(j).getStoreName().equals(stores.get(i)[0]))
-                {
-                    storeItems.add(allItems.get(j));
-                }
+                itemsForStores.get(0).add(allItems.get(j));
+            }else if(allItems.get(j).getItemCategory().equals(store1))
+            {
+                itemsForStores.get(1).add(allItems.get(j));
+            }else if(allItems.get(j).getItemCategory().equals(store2))
+            {
+                itemsForStores.get(2).add(allItems.get(j));
+            }else
+            {
+                itemsForStores.get(3).add(allItems.get(j));
             }
-            String storeName = stores.get(i)[0];
-            String storeDesc = stores.get(i)[1];
-            int storeImage = Integer.parseInt(stores.get(i)[2]);
-            Stores.add(new Store(storeName, storeDesc, storeImage, storeItems));
         }
+
+        Stores.add(new Store(store0, "Clothes and other wearable stuff", R.drawable.clothing, itemsForStores.get(0)));
+        Stores.add(new Store(store1, "This is a Music store", R.drawable.ipod, itemsForStores.get(1)));
+        Stores.add(new Store(store2, "Stores music from Artists", R.drawable.music, itemsForStores.get(2)));
+        Stores.add(new Store(store3, "Configure Data", R.drawable.settings, itemsForStores.get(3)));
+
 
         storeAdapter = new StoreAdapter(this, Stores);
         //listView.setAdapter(storeAdapter);
@@ -106,13 +107,12 @@ public class Marketplace extends AppCompatActivity {
                     {
 
                         JSONObject jo = (JSONObject)ja.get(i);
-                        String name = jo.getString("Item_Name");
-                        float price = (float)jo.getDouble("Item_Price");
+                        String name = jo.getString("ItemName");
+                        float price = (float)jo.getDouble("ItemPrice");
                         String category = jo.getString("ItemCategory");
-                        String desc = jo.getString("Item_Description");
                         double rating = Double.parseDouble(getItemRating(jo.getString("itemId"), category));
 
-                        items.add(new Item(name, price, desc,category, rating));
+                        items.add(new Item(name, price, category, rating));
                     }
 
                 }catch(Exception e)
@@ -126,41 +126,41 @@ public class Marketplace extends AppCompatActivity {
         return items;
     }
 
-    public ArrayList<String[]> getStoresFromDB() //gets all Items from database
-    {
-        final ArrayList<String[]> stores = new ArrayList<String[]>();
-        ContentValues params = new ContentValues();
-        @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(getStores_serverAddress,params) {
-            @Override
-
-            // Gets items from database
-            protected void onPostExecute(String output) {
-                try
-                {
-                    JSONArray ja = new JSONArray(output);
-                    for(int i = 0; i < ja.length(); i++)
-                    {
-
-                        JSONObject jo = (JSONObject)ja.get(i);
-                        String name = jo.getString("Store_Name");
-                        String description = jo.getString("Store_Description");
-                        int image = jo.getInt("Store_Image");
-
-                        String[] thisStore = {name, description, image+""};
-                        stores.add(thisStore);
-
-                    }
-
-                }catch(Exception e)
-                {
-                    System.err.println("Unable to access JSON Array from getStores.php");
-                }
-            }
-        };
-        asyncHttpPost.execute();
-
-        return stores;
-    }
+//    public ArrayList<String[]> getStoresFromDB() //gets all Items from database
+//    {
+//        final ArrayList<String[]> stores = new ArrayList<String[]>();
+//        ContentValues params = new ContentValues();
+//        @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(getStores_serverAddress,params) {
+//            @Override
+//
+//            // Gets items from database
+//            protected void onPostExecute(String output) {
+//                try
+//                {
+//                    JSONArray ja = new JSONArray(output);
+//                    for(int i = 0; i < ja.length(); i++)
+//                    {
+//
+//                        JSONObject jo = (JSONObject)ja.get(i);
+//                        String name = jo.getString("Store_Name");
+//                        String description = jo.getString("Store_Description");
+//                        int image = jo.getInt("Store_Image");
+//
+//                        String[] thisStore = {name, description, image+""};
+//                        stores.add(thisStore);
+//
+//                    }
+//
+//                }catch(Exception e)
+//                {
+//                    System.err.println("Unable to access JSON Array from getStores.php");
+//                }
+//            }
+//        };
+//        asyncHttpPost.execute();
+//
+//        return stores;
+//    }
 
     public String getItemRating(String itemId, String category) //gets all Items from database
     {
