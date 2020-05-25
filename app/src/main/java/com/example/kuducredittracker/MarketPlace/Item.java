@@ -7,10 +7,18 @@ public class Item {
 	    private String name, itemCategory;
 	    private double price, rating; //price and rating(0 - 5)
 		MarketPlaceHelperFunctions helperFunctions;
-
+		
+		//This constructor is for when item already has a rating
+		public Item(String ItemName, double ItemPrice,String itemCategory)
+		{
+			this.name = ItemName;
+			this.price = ItemPrice;
+			this.rating = 2.5;
+			this.itemCategory = itemCategory;
+		}
 
 		//This constructor is for when item already has a rating
-		public Item(String ItemName, float ItemPrice,String itemCategory, double rating)
+		public Item(String ItemName, double ItemPrice,String itemCategory, double rating)
 		{
 			this.name = ItemName;
 			this.price = ItemPrice;
