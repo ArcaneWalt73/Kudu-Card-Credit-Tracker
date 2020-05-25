@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.kuducredittracker.Profile;
 import com.example.kuducredittracker.R;
 import com.example.kuducredittracker.Resources.AsyncHttpPost;
 import com.example.kuducredittracker.Resources.StoreAdapter;
@@ -148,7 +149,7 @@ public class Marketplace extends AppCompatActivity {
         ContentValues params = new ContentValues();
         params.put("itemId", itemId);
         params.put("itemCategory", category);
-        String studentNr = new UserAccount(new String[]{}, this).getUserName();
+        String studentNr = Profile.sessionUsername;
         params.put("studentNumber", studentNr);
 
         @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(getItemRating_serverAddress,params) {
