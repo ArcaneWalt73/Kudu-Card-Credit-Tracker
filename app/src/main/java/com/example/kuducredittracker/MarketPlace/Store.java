@@ -23,7 +23,7 @@ public class Store {
 	    }
 
 	//add items to store instance
-    public void addItem(String name, float price)
+    public void addItem(String name, double price)
     {
         String[] details = {name, price + ""};
         items.add(new Item(name, price)); //add to array
