@@ -1,12 +1,16 @@
 package com.example.kuducredittracker.MarketPlace;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -23,18 +27,32 @@ import java.util.ArrayList;
 
 public class Marketplace extends AppCompatActivity {
 
+    private Button refresh; // Refresh Button
     private String getItem_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/getItems.php"; //address to get data  from database#NB UPDATE THIS ADRESS TO THE PHP DAVIS CREATES
     private String getStores_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/getStoreNames.php";
     private String getItemRating_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/getItemRating.php";
     private ArrayList<Store> Stores = new ArrayList<Store>();
     private StoreAdapter storeAdapter;
     ListView listView;
+    GridView gridview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marketplace);
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM); // Allow custom Toolbar display option
+        getSupportActionBar().setCustomView(R.layout.custom_toolbar); // initialize custom Toolbar
         listView = (ListView)findViewById(R.id.m_listview);
+        gridview = (GridView) findViewById(R.id.marketplace_gridview);
+
+        refresh = getSupportActionBar().getCustomView().findViewById(R.id.custom_refresh_btn);
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Refresh the gridview
+            }
+        });
+        refresh.setVisibility(View.INVISIBLE);
 
         //the names of the stores in the database
 //        String store0 = "Clothing", store1 = "Ipod Text", store2 = "Music", store3 = "Setting";
@@ -66,8 +84,9 @@ public class Marketplace extends AppCompatActivity {
         }
 
         storeAdapter = new StoreAdapter(this, Stores);
-        listView.setAdapter(storeAdapter);
-
+        //listView.setAdapter(storeAdapter);
+        listView.setVisibility(View.INVISIBLE);
+        gridview.setAdapter(storeAdapter);
     }
 
 
