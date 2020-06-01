@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.kuducredittracker.MarketPlace.Marketplace;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Profile extends AppCompatActivity {
     public  static String sessionUsername;
@@ -37,9 +39,22 @@ public class Profile extends AppCompatActivity {
 
     }
 
+    public void TestImageLoader(View v)
+    {
+        Intent main = new Intent(this, DisplayItems.class);
+        startActivity(main);
+    }
+
     public void doNext(View v)
     {
         Intent main = new Intent(this, Marketplace.class);
         startActivity(main);
+    }
+
+
+    public void add_item(View v)
+    {
+        Intent go = new Intent(this,Adding_Item.class);
+        startActivity(go);
     }
 }
