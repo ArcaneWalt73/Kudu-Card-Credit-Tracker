@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.kuducredittracker.Profile;
 import com.example.kuducredittracker.R;
 import com.example.kuducredittracker.Resources.AsyncHttpPost;
+import com.example.kuducredittracker.Resources.ItemAdapter;
 import com.example.kuducredittracker.Resources.StoreAdapter;
 import com.example.kuducredittracker.Resources.UserAccount;
 
@@ -35,21 +36,28 @@ public class Marketplace extends AppCompatActivity {
     private String getItemRating_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/getItemRating.php";
     private ArrayList<Store> Stores = new ArrayList<Store>();
     private StoreAdapter storeAdapter;
+    private ItemAdapter itemAdapter;
     ListView listView;
     GridView gridview;
 
 
     Toolbar toolbar;
+    ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_marketplace);
 
-        /*toolbar = findViewById(R.id.custom_toolbar);
+        toolbar = findViewById(R.id.custom_toolbar);
         setSupportActionBar(toolbar);
+//        this.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         if (getSupportActionBar() != null)
-            this.getSupportActionBar().setDisplayHomeAsUpEnabled(false);*/
+            this.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        else
+            System.err.println("ToolBar was null");
+
+        //actionBar = (ActionBar) findViewById(R.id.custom_toolbar);
 
         //listView = (ListView)findViewById(R.id.m_listview);
         gridview = (GridView) findViewById(R.id.marketplace_gridview);
@@ -60,15 +68,15 @@ public class Marketplace extends AppCompatActivity {
             public void onClick(View v) {
                 // Refresh the gridview
             }
-        });*/
-        //refresh.setVisibility(View.INVISIBLE);
+        });
+        refresh.setVisibility(View.INVISIBLE);*/
 
         //the names of the stores in the database
-        String store0 = "Clothing", store1 = "Stationery", store2 = "Music", store3 = "Setting";
+        //String store0 = "Clothing", store1 = "Stationery", store2 = "Music", store3 = "Setting";
 
-        ArrayList<ArrayList<Item>> itemsForStores = new ArrayList<ArrayList<Item>>(); //get the store names from db
+        //ArrayList<ArrayList<Item>> itemsForStores = new ArrayList<ArrayList<Item>>(); //get the store names from db
         ArrayList<Item> allItems = getItemsFromDB(); //get all items from db
-
+/*
         for(int j = 0; j < allItems.size(); ++j)
         {
             //if the item's store name matches current store name then add it to current store's items
@@ -96,11 +104,21 @@ public class Marketplace extends AppCompatActivity {
         storeAdapter = new StoreAdapter(this, Stores);
         //listView.setAdapter(storeAdapter);
         //listView.setVisibility(View.INVISIBLE);
-        gridview.setAdapter(storeAdapter);
+        gridview.setAdapter(storeAdapter);*/
 
 
     }
 
+    public void setGridviewItems(ArrayList<Item> items) {
+        itemAdapter = new ItemAdapter(this, items);
+        gridview.setAdapter(itemAdapter);
+    }
+
+    public void printArray(ArrayList<Item> items) {
+        for (int i = 0; i < items.size(); i++) {
+            System.err.println(items.get(i).getName()+" "+items.get(i).getItemCategory());
+        }
+    }
 
     public ArrayList<Item> getItemsFromDB() //gets all Items from database
     {
@@ -115,7 +133,7 @@ public class Marketplace extends AppCompatActivity {
                 {
                     System.err.println("hsahskahkshakjhskahkshakhsadjlajdkjagdkagdkgakdhgakgdkjahdlahldha");
                     System.err.println(output);
-                    String [] jsonArrayArray = output.split(",");
+                    //String [] jsonArrayArray = output.split(",");
 
                     JSONArray fullArray = new JSONArray(output);
                     for (int ai = 0; ai < fullArray.length(); ai++) {
@@ -124,7 +142,6 @@ public class Marketplace extends AppCompatActivity {
                         JSONArray ja = new JSONArray(array);
                         for(int i = 0; i < ja.length(); i++)
                         {
-
                             JSONObject jo = (JSONObject)ja.get(i);
                             String name = jo.getString("NAME");
                             float price = (float)jo.getDouble("PRICE");
@@ -142,8 +159,8 @@ public class Marketplace extends AppCompatActivity {
                             items.add(new Item(name, price, category, rating));
                         }
                     }
-
-
+                    setGridviewItems(items);
+                    printArray(items);
                 }catch(Exception e)
                 {
                     e.printStackTrace();
