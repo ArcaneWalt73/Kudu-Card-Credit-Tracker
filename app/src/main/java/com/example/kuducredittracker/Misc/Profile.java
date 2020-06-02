@@ -1,4 +1,4 @@
-package com.example.kuducredittracker;
+package com.example.kuducredittracker.Misc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.kuducredittracker.MarketPlace.Marketplace;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.kuducredittracker.Misc.Adding_Item;
+import com.example.kuducredittracker.Misc.DisplayItems;
+import com.example.kuducredittracker.PurchaseHistory;
+import com.example.kuducredittracker.R;
 
 public class Profile extends AppCompatActivity {
     public static String sessionUsername;
@@ -56,7 +58,12 @@ public class Profile extends AppCompatActivity {
 
     public void add_item(View v)
     {
-        Intent go = new Intent(this,Adding_Item.class);
+        Intent go = new Intent(this, Adding_Item.class);
         startActivity(go);
+    }
+
+    public void doHistory(View v) {
+        Intent hist = new Intent(this, PurchaseHistory.class);
+        startActivity(hist);
     }
 }

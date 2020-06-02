@@ -5,7 +5,7 @@ import com.example.kuducredittracker.Resources.MarketPlaceHelperFunctions;
 public class Item {
 	private int id;
 	private String name, itemCategory;
-	private double price, rating; //price and rating(0 - 5)
+	private Double price, rating; //price and rating(0 - 5)
 	String url, Description;
 	MarketPlaceHelperFunctions helperFunctions;
 

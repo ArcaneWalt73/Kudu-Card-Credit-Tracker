@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import com.example.kuducredittracker.Misc.Profile;
 import com.example.kuducredittracker.Resources.AsyncHttpPost;
 import com.example.kuducredittracker.Resources.CustomVolleyRequest;
 
@@ -106,8 +107,9 @@ public class item_info extends AppCompatActivity {
 
     public void doBuy(View v) {
 
-        if (Profile.sessionCredit < price)
+        if (Profile.sessionCredit < price) {
             Toast.makeText(this, "Insuffient Funds", Toast.LENGTH_SHORT).show();
+        }
         else {
             ContentValues params = new ContentValues();
             params.put("studentID", Profile.sessionUsername);

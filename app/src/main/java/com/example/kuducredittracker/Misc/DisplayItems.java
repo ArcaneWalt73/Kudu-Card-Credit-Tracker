@@ -1,4 +1,4 @@
-package com.example.kuducredittracker;
+package com.example.kuducredittracker.Misc;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import com.example.kuducredittracker.R;
 import com.example.kuducredittracker.Resources.CustomVolleyRequest;
 
 public class DisplayItems extends AppCompatActivity {

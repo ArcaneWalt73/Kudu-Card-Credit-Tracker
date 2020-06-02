@@ -5,25 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.kuducredittracker.Profile;
+import com.example.kuducredittracker.Misc.Profile;
 import com.example.kuducredittracker.R;
 import com.example.kuducredittracker.Resources.AsyncHttpPost;
 import com.example.kuducredittracker.Resources.ItemAdapter;
 import com.example.kuducredittracker.Resources.StoreAdapter;
-import com.example.kuducredittracker.Resources.UserAccount;
 import com.example.kuducredittracker.item_info;
 
 import org.json.JSONArray;

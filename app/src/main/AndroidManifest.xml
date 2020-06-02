@@ -14,12 +14,13 @@
         android:roundIcon="@drawable/card"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DisplayItems"></activity>
-        <activity android:name=".Adding_Item" />
+        <activity android:name=".PurchaseHistory"></activity>
+        <activity android:name=".Misc.DisplayItems" />
+        <activity android:name=".Misc.Adding_Item" />
         <activity android:name=".item_info" />
-        <activity android:name=".Items" />
+        <activity android:name=".HistoryInfo" />
         <activity android:name=".MarketPlace.Marketplace" />
-        <activity android:name=".Profile" />
+        <activity android:name=".Misc.Profile" />
         <activity android:name=".AppEntrance.register" />
         <activity android:name=".AppEntrance.login">
             <intent-filter>

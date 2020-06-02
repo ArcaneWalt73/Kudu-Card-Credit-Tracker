@@ -7,7 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.Toast;
 
-import com.example.kuducredittracker.Profile;
+import com.example.kuducredittracker.Misc.Profile;
 
 
 import org.json.JSONArray;

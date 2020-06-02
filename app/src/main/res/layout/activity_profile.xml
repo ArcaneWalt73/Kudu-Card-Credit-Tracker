@@ -19,7 +19,7 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Profile"
+    tools:context=".Misc.Profile"
     android:background="@color/graylight"
     android:orientation="vertical">
 
@@ -115,6 +115,7 @@
         android:background="@drawable/buttonstyle"
         android:textColor="#ffffff"
         android:textSize="30sp"
+        android:onClick="doHistory"
         android:layout_marginTop="20dp"/>
 
     <Button
