@@ -19,12 +19,18 @@
         android:textAlignment="center"
         android:textSize="14sp" />
 
-    <ImageView
+    <!--ImageView
         android:id="@+id/m_store_img"
         android:layout_width="match_parent"
         android:layout_height="110sp"
         android:layout_margin="5sp"
-        android:src="@drawable/default_store_icon" />
+        android:src="@drawable/default_store_icon" /-->
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="match_parent"
+        android:layout_height="110sp"
+        android:layout_margin="5sp"
+        android:id="@+id/m_store_img"
+        />
 
     <LinearLayout
         android:layout_gravity="center"

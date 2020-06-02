@@ -12,7 +12,8 @@ import com.example.kuducredittracker.MarketPlace.Marketplace;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Profile extends AppCompatActivity {
-    public  static String sessionUsername;
+    public static String sessionUsername;
+    public static Double sessionCredit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,7 @@ public class Profile extends AppCompatActivity {
 
         if (parent.hasExtra("credit")) {
             String credit = parent.getStringExtra("credit");
+            sessionCredit = Double.parseDouble(credit);
             TextView user = (TextView) findViewById(R.id.profile_credit);
             user.setText(credit + "");
         }

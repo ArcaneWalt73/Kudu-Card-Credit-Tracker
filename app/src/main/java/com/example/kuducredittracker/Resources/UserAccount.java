@@ -52,21 +52,29 @@ public class UserAccount {
             @Override
             protected void onPostExecute(String output)
             {
-                System.err.println("This is the output from LOGIN: "+ output);
+                // System.err.println("This is the output from LOGIN: "+ output);
+                String fname = "emptyFname";
+                String lname = "emptyLname";
+                String email = "emptyEmail";
+                String contact = "emptyContact";
                 if (output.contains("false"))
                 {
-                    Toast.makeText(context, output, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Please ensure input is correct", Toast.LENGTH_SHORT).show();
                     this.logged_in = false;
                 }else if(!output.contains("false")){
                     Toast.makeText(context, "Welcome "+username, Toast.LENGTH_LONG).show();
                     this.logged_in = true; // The user successfully logged in
-
                     try {
                         JSONArray ja = new JSONArray(output);
                         if(ja != null)
                         {
                             JSONObject jo = (JSONObject)ja.get(0);
-                            user_credit = jo.getString("RATING");
+                            user_credit = jo.getString("KUDU_BUCKS");
+                            fname = jo.getString("FNAME");
+                            lname = jo.getString("LNAME");
+                            email = jo.getString("EMAIL_ADDRESS");
+                            contact = jo.getString("CONTACT_NO");
+                            //{"STUDENT_NO":"1234","FNAME":"dave","LNAME":"moswedi","PASSWORD":"$2y$10$cyH0zq2FW9PHvDftf0PhEuFjJ.\/I9RC\/j5iyrA25Nedk6GBf5v6AO","EMAIL_ADDRESS":"dave@gmail.com","CONTACT_NO":"0834561234","KUDU_BUCKS":"1000.00"}
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -77,10 +85,12 @@ public class UserAccount {
                     main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     main.putExtra("username", username); // carry along the username
                     main.putExtra("credit", user_credit);
+                    main.putExtra("fname", fname);
+                    main.putExtra("lname", lname);
+                    main.putExtra("email", email);
+                    main.putExtra("contact", contact);
                     context.startActivity(main); // Proceed to the user's profile
                 }
-
-
             }
         };
         asyncHTTPPost.execute();

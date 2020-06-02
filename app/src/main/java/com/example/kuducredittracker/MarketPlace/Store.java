@@ -22,14 +22,14 @@ public class Store {
 	 	helperFunctions = new MarketPlaceHelperFunctions();
 	    }
 
-	//add items to store instance
+	/*add items to store instance
     public void addItem(String name, float price, String itemCategory, double rating)
     {
         String[] details = {name, price + ""};
         items.add(new Item(name, price, itemCategory, rating)); //add to array
         helperFunctions.addItem(details); //add to the database
 
-    }
+    }*/
 
     public Item getShopBestItem() //returns the highest rated item in the shop
     {

@@ -7,9 +7,11 @@ import androidx.appcompat.widget.Toolbar;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
@@ -22,6 +24,7 @@ import com.example.kuducredittracker.Resources.AsyncHttpPost;
 import com.example.kuducredittracker.Resources.ItemAdapter;
 import com.example.kuducredittracker.Resources.StoreAdapter;
 import com.example.kuducredittracker.Resources.UserAccount;
+import com.example.kuducredittracker.item_info;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -35,6 +38,7 @@ public class Marketplace extends AppCompatActivity {
     private String getStores_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/getStoreNames.php";
     private String getItemRating_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/getItemRating.php";
     private ArrayList<Store> Stores = new ArrayList<Store>();
+    ArrayList<Item> allItems;
     private StoreAdapter storeAdapter;
     private ItemAdapter itemAdapter;
     ListView listView;
@@ -70,48 +74,28 @@ public class Marketplace extends AppCompatActivity {
             }
         });
         refresh.setVisibility(View.INVISIBLE);*/
-
-        //the names of the stores in the database
-        //String store0 = "Clothing", store1 = "Stationery", store2 = "Music", store3 = "Setting";
-
-        //ArrayList<ArrayList<Item>> itemsForStores = new ArrayList<ArrayList<Item>>(); //get the store names from db
-        ArrayList<Item> allItems = getItemsFromDB(); //get all items from db
-/*
-        for(int j = 0; j < allItems.size(); ++j)
-        {
-            //if the item's store name matches current store name then add it to current store's items
-            if(allItems.get(j).getItemCategory().equals(store0))
-            {
-                itemsForStores.get(0).add(allItems.get(j));
-            }else if(allItems.get(j).getItemCategory().equals(store1))
-            {
-                itemsForStores.get(1).add(allItems.get(j));
-            }else if(allItems.get(j).getItemCategory().equals(store2))
-            {
-                itemsForStores.get(2).add(allItems.get(j));
-            }else
-            {
-                itemsForStores.get(3).add(allItems.get(j));
-            }
-        }
-
-        Stores.add(new Store(store0, "Clothes and other wearable stuff", R.drawable.clothing, itemsForStores.get(0)));
-        Stores.add(new Store(store1, "This is a Music store", R.drawable.ipod, itemsForStores.get(1)));
-        Stores.add(new Store(store2, "Stores music from Artists", R.drawable.music, itemsForStores.get(2)));
-        Stores.add(new Store(store3, "Configure Data", R.drawable.settings, itemsForStores.get(3)));
-
-
-        storeAdapter = new StoreAdapter(this, Stores);
-        //listView.setAdapter(storeAdapter);
-        //listView.setVisibility(View.INVISIBLE);
-        gridview.setAdapter(storeAdapter);*/
-
-
+        allItems = getItemsFromDB(); //get all items from db
     }
 
     public void setGridviewItems(ArrayList<Item> items) {
         itemAdapter = new ItemAdapter(this, items);
         gridview.setAdapter(itemAdapter);
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Item item = allItems.get(position);
+                Intent main = new Intent(getApplicationContext(), item_info.class);
+                main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                main.putExtra("id", item.getId());
+                main.putExtra("url", item.getUrl());
+                main.putExtra("name", item.getName());
+                main.putExtra("price", item.getPrice());
+                main.putExtra("category", item.getItemCategory());
+                main.putExtra("description", item.getDescription());
+                main.putExtra("rating", item.getRating());
+                getApplicationContext().startActivity(main);
+            }
+        });
     }
 
     public void printArray(ArrayList<Item> items) {
@@ -136,7 +120,20 @@ public class Marketplace extends AppCompatActivity {
                     //String [] jsonArrayArray = output.split(",");
 
                     JSONArray fullArray = new JSONArray(output);
-                    for (int ai = 0; ai < fullArray.length(); ai++) {
+                    for (int j = 0; j < fullArray.length(); j++) {
+                        JSONObject jo = (JSONObject) fullArray.get(j);
+                        String name = jo.getString("NAME");
+                        Double price = (Double) jo.getDouble("PRICE");
+                        int id = (Integer)jo.getInt("MARKET_ID");
+                        String description = jo.getString("DESCRIPTION");
+                        String url = jo.getString("IMAGE_URL");
+                        String category = jo.getString("CATEGORY");
+                        double rating = 0.0;
+                        items.add(new Item(id, name, price, category, description, url));
+                    }
+
+
+                    /*for (int ai = 0; ai < fullArray.length(); ai++) {
                         String array = fullArray.getString(ai);
                         System.out.println("This is the special array "+ array);
                         JSONArray ja = new JSONArray(array);
@@ -158,9 +155,8 @@ public class Marketplace extends AppCompatActivity {
                             double rating = 0.0;
                             items.add(new Item(name, price, category, rating));
                         }
-                    }
+                    }*/
                     setGridviewItems(items);
-                    printArray(items);
                 }catch(Exception e)
                 {
                     e.printStackTrace();
