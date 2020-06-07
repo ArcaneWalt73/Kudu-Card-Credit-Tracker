@@ -5,11 +5,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/marketplace_bg"
+    android:background="@drawable/market_place_background"
     tools:context=".MarketPlace.Marketplace">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/custom_toolbar"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/darkbluebackground">
 
-    <ListView
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="10"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+                <ImageView
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="2sp"
+                    android:layout_marginTop="2sp"
+                    android:layout_width="60sp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/wits_mini_logo"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="6"
+                android:layout_margin="1sp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10sp"
+                    android:layout_marginBottom="10sp"
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:text="Marketplace"
+                    android:textColor="#fff"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_weight="2"
+                android:layout_gravity="left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+                <Button
+                    android:layout_gravity="end"
+                    android:layout_margin="10sp"
+                    android:id="@+id/custom_refresh_btn"
+                    android:background="@drawable/refresh"
+                    android:layout_width="40sp"
+                    android:layout_height="40sp"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <!--ListView
         android:id="@+id/m_listview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" /-->
+
+    <GridView
+        android:id="@+id/marketplace_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="150sp"
+        android:numColumns="2"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="spacingWidthUniform"
+        android:gravity="center" />
 </LinearLayout>
