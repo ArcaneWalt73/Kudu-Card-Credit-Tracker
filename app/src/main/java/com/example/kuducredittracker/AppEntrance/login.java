@@ -3,17 +3,13 @@ package com.example.kuducredittracker.AppEntrance;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.kuducredittracker.MarketPlace.Marketplace;
 import com.example.kuducredittracker.R;
 import com.example.kuducredittracker.Resources.UserAccount;
-
-import org.json.JSONObject;
 
 public class login extends AppCompatActivity
 {
@@ -24,7 +20,7 @@ public class login extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         //User Login On Click Listener
         user = (EditText) findViewById(R.id.student_no);
         pass = (EditText) findViewById(R.id.password);

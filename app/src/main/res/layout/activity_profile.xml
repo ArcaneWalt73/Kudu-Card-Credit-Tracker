@@ -30,7 +30,7 @@
         android:layout_height="405dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="270dp"
             android:background="@color/darkbluebackground"
             android:orientation="vertical">
 
@@ -48,13 +48,14 @@
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/pp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="-20dp"
-                android:contentDescription="Image of User" />
+                android:layout_marginTop="-55dp"
+                android:contentDescription="Image of User"
+                android:src="@drawable/pp" />
+
             <TextView
                 android:id="@+id/profile_username"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="0dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Student Number"
@@ -70,10 +71,8 @@
             android:layout_width="300dp"
             android:layout_height="120dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="275dp"
-            android:background="@drawable/rounded_corner"
-            android:onClick="TestImageLoader">
-
+            android:layout_marginTop="225dp"
+            android:background="@drawable/extra_rounded_corners">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -82,22 +81,22 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     android:text="Credit"
                     android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center_horizontal"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/profile_credit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:drawableLeft="@drawable/rand_vector_letter"
                     android:paddingTop="10dp"
-                    android:text="R0"
-                    android:textStyle="bold"
-                    android:textSize="50sp"
+                    android:text="0"
                     android:textColor="@color/darkbluebackground"
-                    android:layout_gravity="center_horizontal"/>
+                    android:textSize="50sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -106,8 +105,16 @@
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <ListView
+            android:id="@+id/profile_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
 
-    <Button
+    <!--Button
         android:layout_width="300dp"
         android:layout_height="100dp"
         android:text="HISTORY"
@@ -128,7 +135,7 @@
         android:textSize="30sp"
         android:layout_marginTop="20dp"
         android:onClick="doNext"
-        />
+        /-->
 
 
 

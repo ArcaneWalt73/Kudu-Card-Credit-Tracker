@@ -14,7 +14,14 @@
         android:roundIcon="@drawable/card"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PurchaseHistory"></activity>
+        <activity android:name=".AppEntrance.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PurchaseHistory" />
         <activity android:name=".Misc.DisplayItems" />
         <activity android:name=".Misc.Adding_Item" />
         <activity android:name=".item_info" />
@@ -23,11 +30,11 @@
         <activity android:name=".Misc.Profile" />
         <activity android:name=".AppEntrance.register" />
         <activity android:name=".AppEntrance.login">
-            <intent-filter>
+            <!--intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter-->
         </activity>
     </application>
 
