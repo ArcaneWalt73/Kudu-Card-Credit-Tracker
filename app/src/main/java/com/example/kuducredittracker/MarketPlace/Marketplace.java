@@ -123,8 +123,8 @@ public class Marketplace extends AppCompatActivity {
                         String description = jo.getString("DESCRIPTION");
                         String url = jo.getString("IMAGE_URL");
                         String category = jo.getString("CATEGORY");
-                        double rating = 0.0;
-                        items.add(new Item(id, name, price, category, description, url));
+                        float rating = Float.parseFloat(jo.getString("RATING"));
+                        items.add(new Item(id, name, price, category, description, url, rating));
                     }
 
 

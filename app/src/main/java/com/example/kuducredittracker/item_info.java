@@ -7,6 +7,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewDebug;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +29,7 @@ public class item_info extends AppCompatActivity {
     private Double price;
     private String category;
     private String description;
-    private Double rating;
+    private Float rating;
 
     private TextView tv_price;
     private TextView tv_desc;
@@ -82,11 +83,13 @@ public class item_info extends AppCompatActivity {
 
         System.err.println("Check 7");
         if (parent.hasExtra("rating")) {
-            rating = parent.getDoubleExtra("rating", -1.0);
+            rating = parent.getFloatExtra("rating", -1);
             ratingBar.setRating(Float.parseFloat(rating.toString()));
+            ratingBar.setIsIndicator(true);
         }
 
         System.err.println("Check 8");
+
 
         loadImage();
     }
@@ -108,9 +111,13 @@ public class item_info extends AppCompatActivity {
     public void doBuy(View v) {
 
         if (Profile.sessionCredit < price) {
+
+
             Toast.makeText(this, "Insuffient Funds", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, rating, Toast.LENGTH_SHORT).show();
         }
         else {
+
             ContentValues params = new ContentValues();
             params.put("studentID", Profile.sessionUsername);
             params.put("itemID", id);
@@ -128,6 +135,7 @@ public class item_info extends AppCompatActivity {
                 }
             };
             asyncHttpPost.execute();
+           finish();
         }
     }
 }

@@ -29,6 +29,7 @@ public class PurchaseHistory extends AppCompatActivity {
     ArrayList<HistoryItem> allItems;
     HistoryAdapter historyAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +49,7 @@ public class PurchaseHistory extends AppCompatActivity {
                 HistoryItem item = allItems.get(position);
                 Intent main = new Intent(getApplicationContext(), HistoryInfo.class);
                 main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                main.putExtra("position", position);
                 main.putExtra("id", item.getId());
                 main.putExtra("url", item.getUrl());
                 main.putExtra("name", item.getName());

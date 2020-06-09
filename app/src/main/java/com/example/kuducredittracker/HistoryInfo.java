@@ -2,19 +2,28 @@ package com.example.kuducredittracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
+import com.example.kuducredittracker.Resources.AsyncHttpPost;
 import com.example.kuducredittracker.Resources.CustomVolleyRequest;
+import com.example.kuducredittracker.Resources.MarketPlaceHelperFunctions;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class HistoryInfo extends AppCompatActivity {
 
-    private String buy_url = "https://lamp.ms.wits.ac.za/~s1965919/buy.php";
+    private String rate_url = "https://lamp.ms.wits.ac.za/~s1965919/Rating.php";
 
     private int id;
     private String url;
@@ -22,7 +31,7 @@ public class HistoryInfo extends AppCompatActivity {
     private Double price;
     private String category;
     private String description;
-    private Double rating;
+    private Float rating;
     private String date;
 
     private TextView tv_price;
@@ -79,8 +88,8 @@ public class HistoryInfo extends AppCompatActivity {
 
         System.err.println("Check 7");
         if (parent.hasExtra("rating")) {
-            rating = parent.getDoubleExtra("rating", -1.0);
-            ratingBar.setRating(Float.parseFloat(rating.toString()));
+           // rating = parent.getFloatExtra("rating", -1.0f);
+            ratingBar.setRating(-1.0f);
         }
 
         System.err.println("Check 8");
@@ -88,6 +97,8 @@ public class HistoryInfo extends AppCompatActivity {
              date = parent.getStringExtra("date");
              tv_date.setText(date);
         }
+
+
         loadImage();
     }
 
@@ -104,4 +115,58 @@ public class HistoryInfo extends AppCompatActivity {
                         .ic_dialog_alert));
         imageView.setImageUrl(url, imageLoader);
     }
+
+
+    public void doRate(View v)
+    {
+        float rating = ratingBar.getRating();
+        System.err.println("Check 10 == "+rating);
+
+        appendRating(this.id,rating);
+
+        System.err.println("Check 12 == done ");
+
+    }
+
+    public void appendRating(Integer item_id, float rating)//rating system from 0-5(o worst 5 best)
+    {
+        ContentValues params = new ContentValues();
+
+        String labelRating = "numberStars";
+        String labelId = "itemId";
+
+        params.put(labelRating, rating);
+        params.put(labelId, item_id);
+
+        final Float[] resultRating = {-1f};
+
+
+        @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(rate_url, params) {
+            @Override
+
+
+            protected void onPostExecute(String output) {
+                System.err.println("Here's the output to AddRating: "+output);
+
+                try {
+
+
+                        JSONObject jo = new JSONObject(output);
+                        Toast.makeText(getApplicationContext(), "Rating Added" + jo, Toast.LENGTH_SHORT).show();
+
+
+
+                } catch (JSONException e) {
+
+                    Toast.makeText(getApplicationContext(), "Check connection and rate again", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        asyncHttpPost.execute();
+
+    }
+
+
+
+
 }

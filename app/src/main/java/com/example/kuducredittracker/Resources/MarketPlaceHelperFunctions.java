@@ -6,12 +6,19 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Field;
+
 public class MarketPlaceHelperFunctions {
 
     private Context context;
     private String addItem_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/Item.php";//made up this address for now(Siya)
     private String removeItem_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/Item.php";//made up this address for now(Siya)
     private String updateCredit_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/Users.php";//made up this address for now(Siya)
+    private String Rate = "https://lamp.ms.wits.ac.za/~s1965919/Rating.php";
     public Integer credit;
     public String studentNumber;
 
@@ -53,33 +60,45 @@ public class MarketPlaceHelperFunctions {
 
     //Append your rating
 
-    public void appendRating(double rating)//rating system from 0-5(o worst 5 best)
+    public void appendRating(Integer item_id, float rating)//rating system from 0-5(o worst 5 best)
     {
         ContentValues params = new ContentValues();
 
-        String label = "rating";
+        String labelRating = "numberStars";
+        String labelId = "itemId";
 
-        params.put(label, rating);
+        params.put(labelRating, rating);
+        params.put(labelId, item_id);
+
+        final Float[] resultRating = {-1f};
 
 
-        @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(addItem_serverAddress, params) {
+        @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(Rate, params) {
             @Override
 
 
             protected void onPostExecute(String output) {
                 System.err.println("Here's the output to AddRating: "+output);
 
-                if (output.contains("true"))
-                {
-                    Toast.makeText(context, "Rating Added", Toast.LENGTH_SHORT).show();
-                    ((Activity)(context)).finish();
-                }
-                else {
-                    Toast.makeText(context, "Unable add rating, Please check your connection and try again", Toast.LENGTH_SHORT).show();
+                try {
+                    JSONArray Rating = new JSONArray(output);
+                    for(int i = 0; i < Rating.length(); i++)
+                    {
+
+                        JSONObject jo = (JSONObject)Rating.get(i);
+                        resultRating[0] = Float.parseFloat(jo.getString("rating"));
+                        Toast.makeText(context, "Rating Added", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                } catch (JSONException e) {
+
+                    Toast.makeText(context, "Check connection and rate again", Toast.LENGTH_SHORT).show();
                 }
             }
         };
         asyncHttpPost.execute();
+
     }
 
     //buy item function
