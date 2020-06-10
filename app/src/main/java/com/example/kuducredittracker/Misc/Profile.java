@@ -21,7 +21,7 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_new_profile);
         Intent parent = getIntent();
         if (parent.hasExtra("username")) {
             String username = parent.getStringExtra("username");
@@ -67,5 +67,10 @@ public class Profile extends AppCompatActivity {
     public void doHistory(View v) {
         Intent hist = new Intent(this, PurchaseHistory.class);
         startActivity(hist);
+    }
+
+    public void LogOut(View v)
+    {
+        finish();
     }
 }

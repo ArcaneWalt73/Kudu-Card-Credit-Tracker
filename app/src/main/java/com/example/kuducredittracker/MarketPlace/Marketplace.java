@@ -22,9 +22,13 @@ import com.example.kuducredittracker.Resources.StoreAdapter;
 import com.example.kuducredittracker.item_info;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class Marketplace extends AppCompatActivity {
 
@@ -114,9 +118,43 @@ public class Marketplace extends AppCompatActivity {
                     System.err.println(output);
                     //String [] jsonArrayArray = output.split(",");
 
-                    JSONArray fullArray = new JSONArray(output);
-                    for (int j = 0; j < fullArray.length(); j++) {
-                        JSONObject jo = (JSONObject) fullArray.get(j);
+                    JSONArray jsonArray = new JSONArray(output);
+                    System.err.println(jsonArray);
+                    /////////////////////////////// sorting jsonAray //////////////////////////////
+                    JSONArray sortedJsonArray = new JSONArray();
+                    List<JSONObject> list = new ArrayList<JSONObject>();
+                    for(int i = 0; i < jsonArray.length(); i++) {
+                        list.add(jsonArray.getJSONObject(i));
+                    }
+
+                    Collections.sort(list, new Comparator<JSONObject>() {
+                        private static final String KEY_NAME = "RATING";
+                        @Override
+                        public int compare(JSONObject a, JSONObject b) {
+                            String str1 = new String();
+                            String str2 = new String();
+                            System.err.println("Check 1");
+
+                            try {
+                                str1 = String.valueOf(a.get(KEY_NAME));
+                                str2 = String.valueOf(b.get(KEY_NAME));
+                                System.err.println("Check 2 = "+str1+str2);
+                            } catch(JSONException e) {
+                                e.printStackTrace();
+                            }
+                            System.err.println("Check 3");
+                            return str1.compareTo(str2);
+                        }
+                    });
+                    for(int i = jsonArray.length()-1; i > -1; i--) {
+                        sortedJsonArray.put(list.get(i));
+                    }
+                    System.err.println(sortedJsonArray);
+                    //////////////////////// sorted JsonArray ///////////////////////////
+
+
+                    for (int j = 0; j < sortedJsonArray.length(); j++) {
+                        JSONObject jo = (JSONObject) sortedJsonArray.get(j);
                         String name = jo.getString("NAME");
                         Double price = (Double) jo.getDouble("PRICE");
                         int id = (Integer)jo.getInt("MARKET_ID");
@@ -237,6 +275,14 @@ public class Marketplace extends AppCompatActivity {
     }
 
 
+
+    public void SortJSONArrayTest(JSONArray jsonArray) {
+
+
+
+
+
+    }
 
     /*
     package com.example.kuducredittracker.MarketPlace;
