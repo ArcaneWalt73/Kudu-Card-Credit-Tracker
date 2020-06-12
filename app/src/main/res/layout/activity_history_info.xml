@@ -20,8 +20,9 @@
                 android:layout_gravity="center"
                 android:layout_width="350sp"
                 android:layout_height="350sp"
-                android:layout_margin="5sp"
+                android:layout_margin="12sp"
                 android:id="@+id/hist_info_item_img"
+                android:backgroundTint="@color/olive"
                 android:background="@drawable/extra_rounded_corners" />
             <LinearLayout
                 android:layout_width="match_parent"
