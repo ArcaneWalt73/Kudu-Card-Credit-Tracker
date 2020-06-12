@@ -5,7 +5,8 @@ import com.example.kuducredittracker.Resources.MarketPlaceHelperFunctions;
 public class Item {
 	private int id;
 	private String name, itemCategory;
-	private Double price, rating; //price and rating(0 - 5)
+	private Double price;
+	private Float rating; //price and rating(0 - 5)
 	String url, Description;
 	MarketPlaceHelperFunctions helperFunctions;
 
@@ -15,14 +16,14 @@ public class Item {
 		this.id = id;
 		this.name = ItemName;
 		this.price = ItemPrice;
-		this.rating = 0.0;
+		this.rating = 0.0f;
 		this.itemCategory = itemCategory;
 		this.url = url;
 		this.Description = Description;
 	}
 
 	//This constructor is for when item already has a rating
-	public Item(int id, String ItemName, double ItemPrice,String itemCategory, String Description, String url, Double rating)
+	public Item(int id, String ItemName, double ItemPrice,String itemCategory, String Description, String url, Float rating)
 	{
 		this.id = id;
 		this.name = ItemName;
@@ -33,10 +34,12 @@ public class Item {
 		this.Description = Description;
 	}
 
-	public void addRating(double newRating) //adds a new rating to the existing one
+	/*public void addRating(float newRating) //adds a new rating to the existing one
 	{
-		helperFunctions.appendRating(newRating); //update the database.
-	}
+		int item_id = this.id;
+		this.rating = helperFunctions.appendRating(item_id,newRating); //update the database.
+
+	}*/
 
 	public double getPrice() {
 		return price;
@@ -54,11 +57,11 @@ public class Item {
 		return Description;
 	}
 
-	public void setRating(double rating) {
+	public void setRating(float rating) {
 		this.rating = rating;
 	}
 
-	public double getRating()
+	public float getRating()
 	{
 		return rating;
 	}

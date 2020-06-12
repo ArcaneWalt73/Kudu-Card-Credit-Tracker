@@ -198,6 +198,7 @@ public class Adding_Item extends AppCompatActivity {
     public void doUpload(View v)
     {
         uploadMultipart();
+        finish();
 
     }
 }

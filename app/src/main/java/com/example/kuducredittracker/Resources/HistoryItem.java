@@ -12,4 +12,5 @@ public class HistoryItem extends Item {
     public String getDate() {
         return date;
     }
+
 }

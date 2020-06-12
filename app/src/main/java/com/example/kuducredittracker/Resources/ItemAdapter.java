@@ -66,7 +66,8 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         title.setText(currentItem.getName());
 
         RatingBar ratingBar = listItem.findViewById(R.id.item_rating_bar);
-        ratingBar.setRating(3);
+        ratingBar.setRating(currentItem.getRating());
+
 
         return listItem;
     }

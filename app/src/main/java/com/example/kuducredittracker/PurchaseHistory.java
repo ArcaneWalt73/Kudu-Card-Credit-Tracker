@@ -29,6 +29,7 @@ public class PurchaseHistory extends AppCompatActivity {
     ArrayList<HistoryItem> allItems;
     HistoryAdapter historyAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,15 +40,16 @@ public class PurchaseHistory extends AppCompatActivity {
 
     }
 
-    public void setGridviewItems(ArrayList<HistoryItem> historyItems) {
+    public void setListviewItems(ArrayList<HistoryItem> historyItems) {
         historyAdapter = new HistoryAdapter(this, historyItems);
         listView.setAdapter(historyAdapter);
-        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Item item = allItems.get(position);
-                Intent main = new Intent(getApplicationContext(), item_info.class);
+                HistoryItem item = allItems.get(position);
+                Intent main = new Intent(getApplicationContext(), HistoryInfo.class);
                 main.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                main.putExtra("position", position);
                 main.putExtra("id", item.getId());
                 main.putExtra("url", item.getUrl());
                 main.putExtra("name", item.getName());
@@ -55,9 +57,10 @@ public class PurchaseHistory extends AppCompatActivity {
                 main.putExtra("category", item.getItemCategory());
                 main.putExtra("description", item.getDescription());
                 main.putExtra("rating", item.getRating());
+                main.putExtra("date", item.getDate());
                 getApplicationContext().startActivity(main);
             }
-        });*/
+        });
     }
 
     public HistoryItem getHistoryItem(int market_id, String date, JSONObject jo) throws JSONException {
@@ -90,8 +93,6 @@ public class PurchaseHistory extends AppCompatActivity {
             protected void onPostExecute(String output) {
                 try
                 {
-                    System.err.println("hsahskahkshakjhskahkshakhsadjlajdkjagdkagdkgakdhgakgdkjahdlahldha");
-                    System.err.println(output);
                     //String [] jsonArrayArray = output.split(",");
 
                     JSONArray fullArray = new JSONArray(output);
@@ -110,31 +111,7 @@ public class PurchaseHistory extends AppCompatActivity {
                         }
                         items.add(historyItem);
                     }
-
-                    /*for (int ai = 0; ai < fullArray.length(); ai++) {
-                        String array = fullArray.getString(ai);
-                        System.out.println("This is the special array "+ array);
-                        JSONArray ja = new JSONArray(array);
-                        for(int i = 0; i < ja.length(); i++)
-                        {
-                            JSONObject jo = (JSONObject)ja.get(i);
-                            String name = jo.getString("NAME");
-                            float price = (float)jo.getDouble("PRICE");
-                            String category = (String)jo.getString("MARKET_ID");
-                            if (category.equals("1"))
-                                category = "FOOD";
-                            if (category.equals("2"))
-                                category = "Clothing";
-                            if (category.equals("3"))
-                                category = "EVENTS";
-                            if (category.equals("4"))
-                                category = "Stationery";
-                            //double rating = Double.parseDouble(getItemRating(jo.getString("MARKET_ID"), category));
-                            double rating = 0.0;
-                            items.add(new Item(name, price, category, rating));
-                        }
-                    }*/
-                    setGridviewItems(items);
+                    setListviewItems(items);
                 }catch(Exception e)
                 {
                     e.printStackTrace();
