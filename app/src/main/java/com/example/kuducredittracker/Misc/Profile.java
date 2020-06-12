@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ import com.example.kuducredittracker.R;
 public class Profile extends AppCompatActivity {
     public static String sessionUsername;
     public static Double sessionCredit;
+    private CountDownTimer mCountDownTimer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +35,7 @@ public class Profile extends AppCompatActivity {
         if (parent.hasExtra("credit")) {
             String credit = parent.getStringExtra("credit");
             sessionCredit = Double.parseDouble(credit);
-            TextView user = (TextView) findViewById(R.id.profile_credit);
-            user.setText(credit + "");
+
         }
 
         /////
@@ -42,6 +43,7 @@ public class Profile extends AppCompatActivity {
         // Retrive other information from Server
 
         /////
+        startTimer();
 
     }
 
@@ -72,5 +74,26 @@ public class Profile extends AppCompatActivity {
     public void LogOut(View v)
     {
         finish();
+    }
+
+
+    // Timer to update curent kudu amount
+    private void startTimer() {
+        mCountDownTimer = new CountDownTimer(20000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                updateCreditText();
+            }
+
+            @Override
+            public void onFinish() {
+                start();
+            }
+        }.start();
+    }
+
+    private void updateCreditText() {
+        TextView user = (TextView) findViewById(R.id.profile_credit);
+        user.setText(sessionCredit + "");
     }
 }
