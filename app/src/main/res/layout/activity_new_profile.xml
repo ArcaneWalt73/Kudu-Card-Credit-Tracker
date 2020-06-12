@@ -14,7 +14,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/darkbluebackground"
                 android:orientation="vertical">
 
                 <ImageView
@@ -84,7 +84,7 @@
                 android:paddingLeft="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/darkbluebackground"
                 android:layout_marginTop="20sp"
                 android:layout_marginBottom="10sp"
                 android:weightSum="10"
@@ -120,7 +120,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="20sp"
                 android:layout_marginBottom="10sp"
-                android:background="@color/colorPrimary"
+                android:background="@color/darkbluebackground"
                 android:weightSum="10"
                 android:onClick="doHistory">
                 <ImageView
@@ -154,7 +154,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="20sp"
-                android:background="@color/colorPrimary"
+                android:background="@color/darkbluebackground"
                 android:layout_marginBottom="10sp"
                 android:weightSum="10"
                 android:onClick="add_item">

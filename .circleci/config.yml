@@ -13,7 +13,7 @@
 #      - welcome/run
 version: 2
 orbs:
-  coveralls: coveralls/coveralls@x.y.z
+  coveralls: coveralls/coveralls@1.0.6
 jobs:
   build:
 #    working_directory: ~/
@@ -45,11 +45,22 @@ jobs:
           name: Run Tests
           command: ./gradlew lint test
       - run:
-          name: Run UnitTest
-          command: ./gradlew test
+          name: Run Coveralls
+          command: ./gradlew test jacocoTestReport coveralls
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/reports
           destination: reports
       - store_test_results: # for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: app/build/test-results
+#      - run:
+#          name: Upload coverage to code climate
+#          command: |
+#                  export JACOCO_SOURCE_PATH=app/src/main/java
+#                  ./cc-test-reporter format-coverage app/build/reports/coverage/debug/report.xml -t jacoco
+#                  ./cc-test-reporter upload-coverage
+#      - coveralls/upload
+#      - run:
+#          name: Run Coveralls
+#          command: ./gradlew jacocoTestReport coveralls
+#       - ./gradlew jacocoTestReport coveralls
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
