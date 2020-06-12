@@ -1,4 +1,48 @@
+plugins {
+    id 'jacoco'
+    id 'com.github.kt3k.coveralls' version '2.8.4'
+}
+
 apply plugin: 'com.android.application'
+apply plugin: 'jacoco'
+
+task jacocoTestReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+
+    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
+    def debugTree = fileTree(dir: "${buildDir}/intermediates/classes/debug", excludes: fileFilter)
+    def mainSrc = "${project.projectDir}/src/main/java"
+
+    /*sourceDirectories = files([mainSrc])
+    classDirectories = files([debugTree])
+    executionData = files("${buildDir}/jacoco/testDebugUnitTest.exec")*/
+}
+
+/*gradlePlugin {
+    plugins {
+        coverallsPlugin {
+            id = 'com.github.kt3k.coveralls'
+            implementationClass = 'org.kt3k.gradle.plugin.CoverallsPlugin'
+        }
+    }
+}*/
+
+/*pluginBundle {
+    website = 'http://github.com/kt3k/coveralls-gradle-plugin/'
+    vcsUrl = 'https://github.com/kt3k/coveralls-gradle-plugin.git'
+    description = 'Send coverage data to coveralls.io'
+    tags = ['coverage', 'coveralls']
+
+    plugins {
+        coverallsPlugin {
+            displayName = 'Coveralls Gradle Plugin'
+        }
+    }
+}*/
 
 android {
     compileSdkVersion 29
@@ -10,11 +54,17 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        coveralls {
+            jacocoReportPath 'build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml'
+        }
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
