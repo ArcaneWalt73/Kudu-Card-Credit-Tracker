@@ -11,7 +11,7 @@
 #
 #    jobs:
 #      - welcome/run
-version: 2.1
+version: 2
 orbs:
   coveralls: coveralls/coveralls@1.0.6
 jobs:
@@ -50,10 +50,7 @@ jobs:
       - run:
           name: Run Coveralls
           command: ./gradlew test jacocoTestReport coveralls
-      - run:
-          name: Install and Make
-          command: npm install && make test-coverage
-      - coveralls/upload
+
 
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/reports
