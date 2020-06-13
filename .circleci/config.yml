@@ -52,7 +52,7 @@ jobs:
           name: Run Coveralls
           command: ./gradlew test jacocoTestReport coveralls
           
-      - codecov/upload:
+      #- codecov/upload:
       
       - run: bash <(curl -s https://codecov.io/bash)
       
