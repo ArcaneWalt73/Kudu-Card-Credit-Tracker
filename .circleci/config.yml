@@ -51,7 +51,7 @@ jobs:
           command: ./gradlew test
           
       - codecov/upload:
-          file: {{ codecov.yml }
+          file: {{ codecov.yml }}
 
       - run: curl -s https://codecov.io/bash | bash
      # - run: bash <(curl -s https://codecov.io/bash)
