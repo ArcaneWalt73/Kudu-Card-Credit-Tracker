@@ -1,9 +1,9 @@
 package com.example.kuducredittracker.Resources;
 
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
 public class UserAccountTest {
 
     @Test
