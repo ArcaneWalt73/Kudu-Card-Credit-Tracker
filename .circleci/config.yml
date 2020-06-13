@@ -11,7 +11,7 @@
 #
 #    jobs:
 #      - welcome/run
-version: 2.1
+version: 2
 orbs:
   #coveralls: coveralls/coveralls@1.0.6
   codecov: codecov/codecov@1.0.2
