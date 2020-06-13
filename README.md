@@ -2,7 +2,6 @@
 <a href="https://codecov.io/gh/The-Combrades/Kudu-Card-Credit-Tracker">
   <img src="https://codecov.io/gh/The-Combrades/Kudu-Card-Credit-Tracker/branch/master/graph/badge.svg" />
 </a>
-<a href='https://coveralls.io/github/The-Combrades/Kudu-Card-Credit-Tracker?branch=master'><img src='https://coveralls.io/repos/github/The-Combrades/Kudu-Card-Credit-Tracker/badge.svg?branch=master' alt='Coverage Status' /></a>
 Kudu Card Tracker
 =====================
 
