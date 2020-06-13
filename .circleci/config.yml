@@ -54,10 +54,10 @@ jobs:
           name: Run Coveralls
           command: ./gradlew test jacocoTestReport coveralls
           
-      - codecov/upload:
-          file: {{ codecov.yml }}
+     # - codecov/upload:
+      #    file: {{ codecov.yml }}
       
-      - run: bash <(curl -s https://codecov.io/bash)
+      #- run: bash <(curl -s https://codecov.io/bash)
       
 
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
