@@ -13,8 +13,7 @@
 #      - welcome/run
 version: 2
 orbs:
-  #coveralls: coveralls/coveralls@1.0.6
-  codecov: codecov/codecov@1.0.2
+  coveralls: coveralls/coveralls@1.0.6
 jobs:
   build:
 #    working_directory: ~/
@@ -23,7 +22,6 @@ jobs:
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
-
       - checkout
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
@@ -49,16 +47,10 @@ jobs:
       - run:
           name: Run UnitTests
           command: ./gradlew test
-          
-      - codecov/upload:
-          file: {{ codecov.yml }}
-
-      - run: curl -s https://codecov.io/bash | bash
-     # - run: bash <(curl -s https://codecov.io/bash)
-      #- run:
-       #   name: Run Coveralls
-        #  command: ./gradlew test jacocoTestReport coveralls
-
+      - run:
+          name: Run Coveralls
+          command: ./gradlew test jacocoTestReport coveralls
+      
 
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/reports
