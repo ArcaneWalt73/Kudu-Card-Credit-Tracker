@@ -13,9 +13,6 @@ import org.junit.runner.RunWith;
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class appLaunchesSuccessfullyTest {
-    @Rule
-    public ActivityTestRule<login> activityRule = new ActivityTestRule(login.class);
-
     @Test
     public void appLaunchesSuccessfully(){
         ActivityScenario.launch(login.class);
