@@ -15,7 +15,6 @@ public class DisplayItems extends AppCompatActivity {
     private TextView editTextUrl;
     private TextView editTextUrl2;
     private TextView editTextUrl3;
-    private Button buttonLoad;
     ConnectivityHelper connectivityHelper;
 
     @Override
@@ -27,7 +26,6 @@ public class DisplayItems extends AppCompatActivity {
         editTextUrl = findViewById(R.id.editTextUrl);
         editTextUrl2 = findViewById(R.id.editTextUrl2);
         editTextUrl3 = findViewById(R.id.editTextUrl3);
-        buttonLoad = (Button) findViewById(R.id.buttonLoad);
     }
 
 

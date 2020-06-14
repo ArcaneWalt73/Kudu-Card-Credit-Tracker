@@ -34,13 +34,6 @@ public class Item {
 		this.Description = Description;
 	}
 
-	/*public void addRating(float newRating) //adds a new rating to the existing one
-	{
-		int item_id = this.id;
-		this.rating = helperFunctions.appendRating(item_id,newRating); //update the database.
-
-	}*/
-
 	public double getPrice() {
 		return price;
 	}

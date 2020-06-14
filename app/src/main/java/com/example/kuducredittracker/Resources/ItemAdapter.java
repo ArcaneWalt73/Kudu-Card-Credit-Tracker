@@ -43,8 +43,6 @@ public class ItemAdapter extends ArrayAdapter<Item> {
 
         Item currentItem = items.get(position);
 
-        //ImageView imageView = (ImageView) listItem.findViewById(R.id.m_store_img);
-
         ///////////////////////////////////////////////////////////////////////////////////////////
         ImageLoader imageLoader;
         NetworkImageView imageView = listItem.findViewById(R.id.m_store_img);

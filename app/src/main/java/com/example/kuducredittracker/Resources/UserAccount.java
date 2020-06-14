@@ -104,10 +104,6 @@ public class UserAccount {
 
         String[] labels = {"studentNumber","password", "firstName", "lastName", "contact", "emailAddress"};
 
-        //hashing the password and passing that to the server insted of plaintext
-        //String hashed_pass = encryptor(new_userDetails[1]);
-        //new_userDetails[1] = hashed_pass;
-
         for(int i = 0; i < new_userDetails.length; ++i)
         {
             params.put(labels[i], new_userDetails[i]);
@@ -115,12 +111,8 @@ public class UserAccount {
 
        @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(register_serverAddress, params) {
            @Override
-
             // Sets register to true if the output string is 1
-
             protected void onPostExecute(String output) {
-                System.err.println("Here's the output to REGISTER: "+output);
-
                 if (output.contains("true"))
                 {
                     Toast.makeText(context, "Account created", Toast.LENGTH_SHORT).show();

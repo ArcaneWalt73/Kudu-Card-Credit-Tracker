@@ -9,7 +9,6 @@ public class Store {
 	 private String name;
 	 private String description;
 	 private ArrayList<Item> items;
-	 private MarketPlaceHelperFunctions helperFunctions; //the helper functions that connect to the database
 
 	 //last parameter is an arrayList of items that belong to that store
 	 public Store(String storeName, String description, int image, ArrayList<Item> items){
@@ -17,31 +16,26 @@ public class Store {
 	 	this.image = image;
 	 	this.name = storeName;
 	 	this.items = items;
+	 }
 
-	 	helperFunctions = new MarketPlaceHelperFunctions();
-	    }
+    public ArrayList<Item> getItems() {
+        return items;
+    }
 
-	/*add items to store instance
-    public void addItem(String name, float price, String itemCategory, double rating)
-    {
-        String[] details = {name, price + ""};
-        items.add(new Item(name, price, itemCategory, rating)); //add to array
-        helperFunctions.addItem(details); //add to the database
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-    }*/
+    public void setImage(int image) {
+        this.image = image;
+    }
 
-    public Item getShopBestItem() //returns the highest rated item in the shop
-    {
-        Item best = items.get(0);
-        for(int i = 0; i < items.size(); ++i)
-        {
-            if(items.get(i).getRating() > best.getRating())
-            {
-                best = items.get(i);
-            }
-        }
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
 
-        return best;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getImage()

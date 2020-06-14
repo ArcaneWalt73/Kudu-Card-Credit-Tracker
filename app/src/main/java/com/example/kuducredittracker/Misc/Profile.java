@@ -58,18 +58,11 @@ public class Profile extends AppCompatActivity {
         refreshCreditText.start();
     }
 
-    public void TestImageLoader(View v)
-    {
-        Intent main = new Intent(this, DisplayItems.class);
-        startActivity(main);
-    }
-
     public void doNext(View v)
     {
         Intent main = new Intent(this, Marketplace.class);
         startActivity(main);
     }
-
 
     public void add_item(View v)
     {
@@ -85,22 +78,6 @@ public class Profile extends AppCompatActivity {
     public void LogOut(View v)
     {
         finish();
-    }
-
-
-    // Timer to update curent kudu amount
-    private void startTimer() {
-        refreshCreditText = new CountDownTimer(20000, 1000) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                updateCreditText();
-            }
-
-            @Override
-            public void onFinish() {
-                start();
-            }
-        }.start();
     }
 
     private void updateCreditText() {

@@ -38,8 +38,6 @@ public class HistoryAdapter extends ArrayAdapter <HistoryItem>{
 
         HistoryItem currentItem = historyItems.get(position);
 
-        //ImageView imageView = (ImageView) listItem.findViewById(R.id.m_store_img);
-
         ///////////////////////////////////////////////////////////////////////////////////////////
         ImageLoader imageLoader;
         NetworkImageView imageView = listItem.findViewById(R.id.history_img);

@@ -16,13 +16,11 @@ public class HistoryItemTest {
 
         assertNotNull(historyItem.getDate());
         assertEquals("00-00-0000", historyItem.getDate());
-
     }
 
     @Test
     public void getHistoryItem() {
         try {
-
             JSONObject object = new JSONObject();
             object.put("MARKET_ID", 0);
             object.put("NAME", "TEST");
@@ -39,6 +37,10 @@ public class HistoryItemTest {
             assertEquals(historyItem.getDescription(), object.getString("DESCRIPTION"));
             assertEquals(historyItem.getUrl(), object.getString("IMAGE_URL"));
             assertEquals(historyItem.getItemCategory(), object.getString("CATEGORY"));
+
+            historyItem.setRating(0.0f);
+            assertNotNull(historyItem.getRating());
+            assertEquals(0.0f, historyItem.getRating());
 
             assertNotNull(historyItem);
         }
