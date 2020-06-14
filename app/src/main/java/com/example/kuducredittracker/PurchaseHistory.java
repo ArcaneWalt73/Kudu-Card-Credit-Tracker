@@ -105,7 +105,7 @@ public class PurchaseHistory extends AppCompatActivity {
                         String date = jo1.getString("PURCHASE_DATE");
                         HistoryItem historyItem = null;
                         for (int i = 0; i < secondArray.length(); i++) {
-                            historyItem = getHistoryItem(id, date, secondArray.getJSONObject(i));
+                            historyItem = HistoryItem.getHistoryItem(id, date, secondArray.getJSONObject(i));
                             if (historyItem != null)
                                 break;
                         }

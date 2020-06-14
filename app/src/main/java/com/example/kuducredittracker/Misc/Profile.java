@@ -18,7 +18,7 @@ import com.example.kuducredittracker.R;
 public class Profile extends AppCompatActivity {
     public static String sessionUsername;
     public static Double sessionCredit;
-    private CountDownTimer mCountDownTimer;
+    private CountDownTimer refreshCreditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +43,19 @@ public class Profile extends AppCompatActivity {
         // Retrive other information from Server
 
         /////
-        startTimer();
+        refreshCreditText = new CountDownTimer(20000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                updateCreditText();
+            }
 
+            @Override
+            public void onFinish() {
+                start();
+            }
+        };
+
+        refreshCreditText.start();
     }
 
     public void TestImageLoader(View v)
@@ -79,7 +90,7 @@ public class Profile extends AppCompatActivity {
 
     // Timer to update curent kudu amount
     private void startTimer() {
-        mCountDownTimer = new CountDownTimer(20000, 1000) {
+        refreshCreditText = new CountDownTimer(20000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 updateCreditText();

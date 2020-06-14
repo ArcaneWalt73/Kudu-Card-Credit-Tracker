@@ -18,7 +18,6 @@ public class MarketPlaceHelperFunctions {
     private String addItem_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/Item.php";//made up this address for now(Siya)
     private String removeItem_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/Item.php";//made up this address for now(Siya)
     private String updateCredit_serverAddress = "https://lamp.ms.wits.ac.za/~s1965919/Users.php";//made up this address for now(Siya)
-    private String Rate = "https://lamp.ms.wits.ac.za/~s1965919/Rating.php";
     public Integer credit;
     public String studentNumber;
 
@@ -60,9 +59,10 @@ public class MarketPlaceHelperFunctions {
 
     //Append your rating
 
-    public void appendRating(Integer item_id, float rating)//rating system from 0-5(o worst 5 best)
+    public static void appendRating(final Context context, Integer item_id, float rating)//rating system from 0-5(o worst 5 best)
     {
         ContentValues params = new ContentValues();
+        String rate_url = "https://lamp.ms.wits.ac.za/~s1965919/Rating.php";
 
         String labelRating = "numberStars";
         String labelId = "itemId";
@@ -72,33 +72,19 @@ public class MarketPlaceHelperFunctions {
 
         final Float[] resultRating = {-1f};
 
-
-        @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(Rate, params) {
+        @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(rate_url, params) {
             @Override
-
-
             protected void onPostExecute(String output) {
                 System.err.println("Here's the output to AddRating: "+output);
-
                 try {
-                    JSONArray Rating = new JSONArray(output);
-                    for(int i = 0; i < Rating.length(); i++)
-                    {
-
-                        JSONObject jo = (JSONObject)Rating.get(i);
-                        resultRating[0] = Float.parseFloat(jo.getString("rating"));
-                        Toast.makeText(context, "Rating Added", Toast.LENGTH_SHORT).show();
-                    }
-
-
+                    JSONObject jo = new JSONObject(output);
+                    Toast.makeText(context, "Rating Added" + jo, Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
-
                     Toast.makeText(context, "Check connection and rate again", Toast.LENGTH_SHORT).show();
                 }
             }
         };
         asyncHttpPost.execute();
-
     }
 
     //buy item function

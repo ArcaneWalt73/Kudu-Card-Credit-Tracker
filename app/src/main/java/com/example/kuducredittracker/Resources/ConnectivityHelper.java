@@ -1,8 +1,9 @@
-package com.example.kuducredittracker.AppEntrance;
+package com.example.kuducredittracker.Resources;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -18,20 +19,8 @@ public class ConnectivityHelper {
     }
 
     public boolean isOnline() {
-        try {
-            int timeoutMs = 1500;
-            Socket sock = new Socket();
-            SocketAddress sockaddr = new InetSocketAddress("8.8.8.8", 53);
-
-            sock.connect(sockaddr, timeoutMs);
-            sock.close();
-
-            return true;
-        } catch (IOException e) { return false; }
-    }
-
-    public boolean isOnline_Second() {
-        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager) context
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }
@@ -47,5 +36,9 @@ public class ConnectivityHelper {
         } else {
             return false;
         }
+    }
+
+    public static void informNoConn(Context context) {
+        Toast.makeText(context, "Unable to connect to the Internet", Toast.LENGTH_LONG).show();
     }
 }

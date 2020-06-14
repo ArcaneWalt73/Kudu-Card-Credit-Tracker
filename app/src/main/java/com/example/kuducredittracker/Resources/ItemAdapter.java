@@ -71,33 +71,4 @@ public class ItemAdapter extends ArrayAdapter<Item> {
 
         return listItem;
     }
-
-
-    /*
-                <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-                <RatingBar
-                    android:id="@+id/myRatingBar"
-                    style="?android:attr/ratingBarStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:numStars="5" />
-            </LinearLayout>
-
-                final RatingBar minimumRating = (RatingBar)findViewById(R.id.myRatingBar);
-    minimumRating.setOnTouchListener(new OnTouchListener()
-    {
-        public boolean onTouch(View view, MotionEvent event)
-        {
-            float touchPositionX = event.getX();
-            float width = minimumRating.getWidth();
-            float starsf = (touchPositionX / width) * 5.0f;
-            int stars = (int)starsf + 1;
-            minimumRating.setRating(stars);
-            return true;
-        }
-    });
-     */
-
 }
