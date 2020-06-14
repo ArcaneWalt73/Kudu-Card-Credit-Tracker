@@ -58,8 +58,8 @@ script:
   
   #- emulator -avd test -no-skin -no-audio -no-window &
   
-  - ./gradlew assembleRelease --stacktrace
-  - ./gradlew lint test
+  #- ./gradlew assembleRelease --stacktrace
+  #- ./gradlew lint test
   - ./gradlew connectedCheck
   #- ./gradlew connectedAndroidTest
   #- ./gradlew connectedAndroidTest coveralls
