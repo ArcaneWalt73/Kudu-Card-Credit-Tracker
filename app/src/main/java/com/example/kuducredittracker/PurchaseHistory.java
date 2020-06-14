@@ -63,24 +63,6 @@ public class PurchaseHistory extends AppCompatActivity {
         });
     }
 
-    public HistoryItem getHistoryItem(int market_id, String date, JSONObject jo) throws JSONException {
-        if (jo.getInt("MARKET_ID") == market_id) {
-            String name = jo.getString("NAME");
-            Double price = (Double) jo.getDouble("PRICE");
-            String description = jo.getString("DESCRIPTION");
-            String url = jo.getString("IMAGE_URL");
-            String category = jo.getString("CATEGORY");
-            return (new HistoryItem(market_id, name, price, category, description, url, date));
-        }
-        return null;
-    }
-
-    public void printArray(ArrayList<Item> items) {
-        for (int i = 0; i < items.size(); i++) {
-            System.err.println(items.get(i).getName()+" "+items.get(i).getItemCategory());
-        }
-    }
-
     public ArrayList<HistoryItem> getItemsFromDB() //gets all Items from database
     {
         final ArrayList<HistoryItem> items = new ArrayList<HistoryItem>();
@@ -105,7 +87,7 @@ public class PurchaseHistory extends AppCompatActivity {
                         String date = jo1.getString("PURCHASE_DATE");
                         HistoryItem historyItem = null;
                         for (int i = 0; i < secondArray.length(); i++) {
-                            historyItem = getHistoryItem(id, date, secondArray.getJSONObject(i));
+                            historyItem = HistoryItem.getHistoryItem(id, date, secondArray.getJSONObject(i));
                             if (historyItem != null)
                                 break;
                         }

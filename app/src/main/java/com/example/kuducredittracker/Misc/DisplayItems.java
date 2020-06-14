@@ -5,50 +5,47 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import com.android.volley.toolbox.ImageLoader;
-import com.android.volley.toolbox.NetworkImageView;
 import com.example.kuducredittracker.R;
-import com.example.kuducredittracker.Resources.CustomVolleyRequest;
+import com.example.kuducredittracker.Resources.ConnectivityHelper;
 
 public class DisplayItems extends AppCompatActivity {
 
-    private EditText editTextUrl;
-    private Button buttonLoad;
-    private NetworkImageView imageView;
-    private ImageLoader imageLoader;
+    private TextView editTextUrl;
+    private TextView editTextUrl2;
+    private TextView editTextUrl3;
+    ConnectivityHelper connectivityHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_items);
+        connectivityHelper = new ConnectivityHelper(this);
 
-        editTextUrl = (EditText) findViewById(R.id.editTextUrl);
-        buttonLoad = (Button) findViewById(R.id.buttonLoad);
-        imageView = (NetworkImageView) findViewById(R.id.LoadView);
-    }
-
-    private void loadImage(){
-        String url = editTextUrl.getText().toString().trim();
-        if(url.equals("")){
-            Toast.makeText(this,"Please enter a URL",Toast.LENGTH_LONG).show();
-            return;
-        }
-
-        imageLoader = CustomVolleyRequest.getInstance(this.getApplicationContext())
-                .getImageLoader();
-        imageLoader.get(url, ImageLoader.getImageListener(imageView,
-                R.drawable.default_store_icon, android.R.drawable
-                        .ic_dialog_alert));
-        imageView.setImageUrl(url, imageLoader);
+        editTextUrl = findViewById(R.id.editTextUrl);
+        editTextUrl2 = findViewById(R.id.editTextUrl2);
+        editTextUrl3 = findViewById(R.id.editTextUrl3);
     }
 
 
     public void Load(View v)
     {
-            loadImage();
+        Boolean is_conn1 = connectivityHelper.isOnline();
+
+        editTextUrl.setText(Boolean.toString(is_conn1));
+    }
+    public void Load2(View v)
+    {
+        Boolean is_conn2 = connectivityHelper.isOnline();
+
+        editTextUrl2.setText(Boolean.toString(is_conn2));
+    }
+    public void Load3(View v)
+    {
+        Boolean is_conn3 = ConnectivityHelper.checkInternetConnection(this);
+
+        editTextUrl3.setText(Boolean.toString(is_conn3));
     }
 
 }

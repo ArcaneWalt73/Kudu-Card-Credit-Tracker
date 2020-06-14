@@ -8,7 +8,6 @@ import net.gotev.uploadservice.UploadService;
 
 public class Initializer extends Application
 {
-
     @Override
     public void onCreate()
     {

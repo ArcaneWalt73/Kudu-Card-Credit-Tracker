@@ -21,7 +21,6 @@ public abstract class AsyncHttpPost extends AsyncTask<String, String, String> {
     protected Boolean item_added;
     protected String postOutput;
 
-
     public AsyncHttpPost(String address, ContentValues parameters)
     {
         this.address = address;
@@ -31,11 +30,6 @@ public abstract class AsyncHttpPost extends AsyncTask<String, String, String> {
         item_added = false;
         postOutput = "";
     }
-
-    public String getPostOutput() {
-        return postOutput;
-    }
-
     public Boolean getRegistered() {
         return registered;
     }
@@ -43,8 +37,6 @@ public abstract class AsyncHttpPost extends AsyncTask<String, String, String> {
     public Boolean getLogged_in() {
         return logged_in;
     }
-
-    public Boolean getItem_added(){return item_added;}
 
     @Override
     protected String doInBackground(String... params)
@@ -93,5 +85,3 @@ public abstract class AsyncHttpPost extends AsyncTask<String, String, String> {
     @Override
     protected abstract void onPostExecute(String output);
 }
-
-

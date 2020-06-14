@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ import com.example.kuducredittracker.R;
 public class Profile extends AppCompatActivity {
     public static String sessionUsername;
     public static Double sessionCredit;
+    private CountDownTimer refreshCreditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +35,7 @@ public class Profile extends AppCompatActivity {
         if (parent.hasExtra("credit")) {
             String credit = parent.getStringExtra("credit");
             sessionCredit = Double.parseDouble(credit);
-            TextView user = (TextView) findViewById(R.id.profile_credit);
-            user.setText(credit + "");
+
         }
 
         /////
@@ -42,13 +43,19 @@ public class Profile extends AppCompatActivity {
         // Retrive other information from Server
 
         /////
+        refreshCreditText = new CountDownTimer(20000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                updateCreditText();
+            }
 
-    }
+            @Override
+            public void onFinish() {
+                start();
+            }
+        };
 
-    public void TestImageLoader(View v)
-    {
-        Intent main = new Intent(this, DisplayItems.class);
-        startActivity(main);
+        refreshCreditText.start();
     }
 
     public void doNext(View v)
@@ -56,7 +63,6 @@ public class Profile extends AppCompatActivity {
         Intent main = new Intent(this, Marketplace.class);
         startActivity(main);
     }
-
 
     public void add_item(View v)
     {
@@ -72,5 +78,10 @@ public class Profile extends AppCompatActivity {
     public void LogOut(View v)
     {
         finish();
+    }
+
+    private void updateCreditText() {
+        TextView user = (TextView) findViewById(R.id.profile_credit);
+        user.setText(sessionCredit + "");
     }
 }
