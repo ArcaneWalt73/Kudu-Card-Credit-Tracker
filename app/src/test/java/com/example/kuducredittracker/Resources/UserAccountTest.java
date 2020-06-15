@@ -2,21 +2,21 @@ package com.example.kuducredittracker.Resources;
 
 
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import static org.junit.Assert.*;
 public class UserAccountTest {
 
     @Test
     public void login() {
+        UserAccount userAccount = Mockito.mock(UserAccount.class);
+        Mockito.when(userAccount.login(Mockito.anyString(), Mockito.anyString())).thenReturn(true);
     }
 
     @Test
     public void register() {
-    }
-
-    @Test
-    public void Encyptor() {
-
+        //UserAccount userAccount = Mockito.mock(UserAccount.class);
+        //Mockito.when(userAccount.register(Mockito.anyList())).thenReturn(true);
     }
 
     @Test
