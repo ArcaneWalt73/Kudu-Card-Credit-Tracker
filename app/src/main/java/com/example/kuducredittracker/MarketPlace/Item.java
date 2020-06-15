@@ -6,7 +6,6 @@ public class Item {
 	private Double price;
 	private Float rating; //price and rating(0 - 5)
 	String url, Description;
-	MarketPlaceHelperFunctions helperFunctions;
 
 	//This constructor is for when item already has a rating
 	public Item(int id, String ItemName, double ItemPrice,String itemCategory, String Description, String url)
