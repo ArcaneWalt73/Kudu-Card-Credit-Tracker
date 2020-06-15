@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,9 +16,7 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 import com.example.kuducredittracker.Resources.AsyncHttpPost;
 import com.example.kuducredittracker.Resources.CustomVolleyRequest;
-import com.example.kuducredittracker.Resources.MarketPlaceHelperFunctions;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -114,10 +113,38 @@ public class HistoryInfo extends AppCompatActivity {
         float rating = ratingBar.getRating();
         System.err.println("Check 10 == "+rating);
 
-        MarketPlaceHelperFunctions.appendRating(this, this.id,rating);
+        appendRating(this, this.id,rating);
 
         System.err.println("Check 12 == done ");
 
+    }
+
+    public static void appendRating(final Context context, Integer item_id, float rating)//rating system from 0-5(o worst 5 best)
+    {
+        ContentValues params = new ContentValues();
+        String rate_url = "https://lamp.ms.wits.ac.za/~s1965919/Rating.php";
+
+        String labelRating = "numberStars";
+        String labelId = "itemId";
+
+        params.put(labelRating, rating);
+        params.put(labelId, item_id);
+
+        final Float[] resultRating = {-1f};
+
+        @SuppressLint("StaticFieldLeak") AsyncHttpPost asyncHttpPost = new AsyncHttpPost(rate_url, params) {
+            @Override
+            protected void onPostExecute(String output) {
+                System.err.println("Here's the output to AddRating: "+output);
+                try {
+                    JSONObject jo = new JSONObject(output);
+                    Toast.makeText(context, "Rating Added" + jo, Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    Toast.makeText(context, "Check connection and rate again", Toast.LENGTH_SHORT).show();
+                }
+            }
+        };
+        asyncHttpPost.execute();
     }
 
 }

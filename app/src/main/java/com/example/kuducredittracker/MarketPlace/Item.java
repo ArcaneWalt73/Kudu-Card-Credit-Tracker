@@ -1,7 +1,5 @@
 package com.example.kuducredittracker.MarketPlace;
 
-import com.example.kuducredittracker.Resources.MarketPlaceHelperFunctions;
-
 public class Item {
 	private int id;
 	private String name, itemCategory;
