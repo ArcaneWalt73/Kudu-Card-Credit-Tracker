@@ -47,7 +47,7 @@ public class appLaunchesSuccessfullyTest {
     public void doRegisterTest(){
         Intents.init();
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        String[] info = {"1234","123","name","sur","022","email"};
+        String[] info = {"1234","123","name","sur","022","email@gmail.com"};
         UserAccount userAccount = new UserAccount(info,appContext);
         userAccount.register(info);
         rule.launchActivity(new Intent());
