@@ -9,6 +9,7 @@ apply plugin: 'jacoco'
 task jacocoTestReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
 
     reports {
+        csv.enabled = false
         xml.enabled = true
         html.enabled = true
     }
@@ -72,6 +73,11 @@ android {
     }
     testOptions {
         unitTests.returnDefaultValues = true
+        unitTests.all{
+            jacoco {
+                includeNoLocationClasses = true
+            }
+        }
     }
 
 }
