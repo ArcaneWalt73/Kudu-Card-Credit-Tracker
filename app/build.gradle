@@ -109,3 +109,10 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-intents:2.2'
 
 }
+tasks.withType(Test) {
+    testLogging {
+        exceptionFormat "full"
+        events "started", "skipped", "passed", "failed"
+        showStandardStreams true
+    }
+}

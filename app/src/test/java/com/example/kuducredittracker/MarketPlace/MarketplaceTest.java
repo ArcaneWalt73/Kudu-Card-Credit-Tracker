@@ -4,8 +4,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 public class MarketplaceTest {
 
@@ -14,9 +13,12 @@ public class MarketplaceTest {
         Marketplace testMP = new Marketplace();
 
         ArrayList<Item> testArray = testMP.allItems;
-
-        //assertArrayEquals(testMP.getItemsFromDB(), testArray);
+        System.out.println(testMP.getItemsFromDB());
         assertNotNull(testMP.getItemsFromDB());
+
+    }
+    @Test
+    public void setItems(){
 
     }
 }
