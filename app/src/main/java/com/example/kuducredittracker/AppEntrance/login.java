@@ -46,6 +46,8 @@ public class login extends AppCompatActivity
 
             String [] info = {username, password};
             UserAccount userAccount = new UserAccount(info, getApplicationContext());
-            userAccount.login(username, password);
+            userAccount.login(username,password);
+            user.setText("");
+            pass.setText("");
         }
     }

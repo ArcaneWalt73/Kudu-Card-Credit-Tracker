@@ -14,6 +14,7 @@
         android:roundIcon="@drawable/card"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Misc.ChangePP"></activity>
         <activity android:name=".AppEntrance.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,11 +31,14 @@
         <activity android:name=".Misc.Profile" />
         <activity android:name=".AppEntrance.register" />
         <activity android:name=".AppEntrance.login">
-            <!--intent-filter>
+
+            <!--
+            intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter-->
+            </intent-filter
+            -->
         </activity>
     </application>
 

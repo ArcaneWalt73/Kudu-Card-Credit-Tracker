@@ -1,14 +1,11 @@
 package com.example.kuducredittracker.MarketPlace;
 
-import com.example.kuducredittracker.Resources.MarketPlaceHelperFunctions;
-
 public class Item {
 	private int id;
 	private String name, itemCategory;
 	private Double price;
 	private Float rating; //price and rating(0 - 5)
 	String url, Description;
-	MarketPlaceHelperFunctions helperFunctions;
 
 	//This constructor is for when item already has a rating
 	public Item(int id, String ItemName, double ItemPrice,String itemCategory, String Description, String url)

@@ -57,6 +57,7 @@ public class UserAccount {
                 String lname = "emptyLname";
                 String email = "emptyEmail";
                 String contact = "emptyContact";
+                String PP_URL = "emptyURL";
                 if (output.contains("false"))
                 {
                     Toast.makeText(context, "Please ensure input is correct", Toast.LENGTH_SHORT).show();
@@ -74,6 +75,7 @@ public class UserAccount {
                             lname = jo.getString("LNAME");
                             email = jo.getString("EMAIL_ADDRESS");
                             contact = jo.getString("CONTACT_NO");
+                            PP_URL = jo.getString("PP_URL");
                             //{"STUDENT_NO":"1234","FNAME":"dave","LNAME":"moswedi","PASSWORD":"$2y$10$cyH0zq2FW9PHvDftf0PhEuFjJ.\/I9RC\/j5iyrA25Nedk6GBf5v6AO","EMAIL_ADDRESS":"dave@gmail.com","CONTACT_NO":"0834561234","KUDU_BUCKS":"1000.00"}
                         }
                     } catch (JSONException e) {
@@ -89,6 +91,7 @@ public class UserAccount {
                     main.putExtra("lname", lname);
                     main.putExtra("email", email);
                     main.putExtra("contact", contact);
+                    main.putExtra("PP_URL", PP_URL);
                     context.startActivity(main); // Proceed to the user's profile
                 }
             }
@@ -128,49 +131,15 @@ public class UserAccount {
         return asyncHttpPost.getRegistered();
     }
 
-
-    private static String encryptor(String string)
-    {
-        String encString = "";
-        try
-        {
-            // Create MessageDigest instance for MD5
-            MessageDigest md = MessageDigest.getInstance("MD5");
-            //Add password bytes to digest
-            md.update(string.getBytes());
-            //Get the hash's bytes
-            byte[] bytes = md.digest(); //This bytes[] has bytes in decimal format;
-            //Convert it to hexadecimal format
-            StringBuilder sb = new StringBuilder();
-            for(int i=0; i< bytes.length ;i++)
-            {
-                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
-            }
-            //Get complete hashed password in hex format
-            encString = sb.toString();
-        }catch(Exception e) {
-            e.printStackTrace();
-        }
-        return encString;
-    }
-
-    public static void printStringArray(String [] array) {
-        for (int i = 0; i < array.length; i++)
-            System.err.println("TEEHEE : "+ array[i]);
-        System.err.println("Goooone");
-    }
-
     public static boolean emailChecker(String s) {
         String [] remainder = s.split("@");
 
-        printStringArray(remainder);
         if (remainder.length == 2) {
             if (remainder[0].equals(""))
                 return false;
             if (remainder[1].equals(""))
                 return false;
             String [] domain = remainder[1].split("\\.");
-            printStringArray(domain);
             if (domain.length >= 2 && !(domain[0].equals("") || domain[1].equals(""))) {
                 if (domain[domain.length - 1].equals("com") || domain[domain.length - 1].equals("za")) {
                     return true;

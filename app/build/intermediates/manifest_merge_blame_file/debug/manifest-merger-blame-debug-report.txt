@@ -1,0 +1,117 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.kuducredittracker"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:5:5-67
+11-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:6:5-79
+12-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:6:22-76
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:7:5-80
+13-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:7:22-77
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->[net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:13:5-81
+14-->[net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:13:22-78
+15    <uses-permission android:name="android.permission.WAKE_LOCK" />
+15-->[net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:14:5-68
+15-->[net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:14:22-65
+16    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+16-->[net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:15:5-77
+16-->[net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:15:22-74
+17
+18    <application
+18-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:9:5-43:19
+19        android:name="com.example.kuducredittracker.Resources.Initializer"
+19-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:10:9-46
+20        android:allowBackup="true"
+20-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:11:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/610fa49abeda4637a1d1eaceb73e7a8e/core-1.1.0/AndroidManifest.xml:24:18-86
+22        android:debuggable="true"
+23        android:icon="@drawable/card"
+23-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:12:9-38
+24        android:label="@string/app_name"
+24-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:13:9-41
+25        android:roundIcon="@drawable/card"
+25-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:14:9-43
+26        android:supportsRtl="true"
+26-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:15:9-35
+27        android:testOnly="true"
+28        android:theme="@style/AppTheme" >
+28-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:16:9-40
+29        <activity android:name="com.example.kuducredittracker.Misc.ChangePP" />
+29-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:17:9-60
+29-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:17:19-48
+30        <activity android:name="com.example.kuducredittracker.AppEntrance.Splash" >
+30-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:18:9-24:20
+30-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:18:19-53
+31            <intent-filter>
+31-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:19:13-23:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:20:17-69
+32-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:20:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:22:17-77
+34-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:22:27-74
+35            </intent-filter>
+36        </activity>
+37        <activity android:name="com.example.kuducredittracker.PurchaseHistory" />
+37-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:25:9-53
+37-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:25:19-50
+38        <activity android:name="com.example.kuducredittracker.Misc.DisplayItems" />
+38-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:26:9-55
+38-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:26:19-52
+39        <activity android:name="com.example.kuducredittracker.Misc.Adding_Item" />
+39-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:27:9-54
+39-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:27:19-51
+40        <activity android:name="com.example.kuducredittracker.item_info" />
+40-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:28:9-47
+40-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:28:19-44
+41        <activity android:name="com.example.kuducredittracker.HistoryInfo" />
+41-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:29:9-49
+41-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:29:19-46
+42        <activity android:name="com.example.kuducredittracker.MarketPlace.Marketplace" />
+42-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:30:9-61
+42-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:30:19-58
+43        <activity android:name="com.example.kuducredittracker.Misc.Profile" />
+43-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:31:9-50
+43-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:31:19-47
+44        <activity android:name="com.example.kuducredittracker.AppEntrance.register" />
+44-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:32:9-58
+44-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:32:19-55
+45        <activity android:name="com.example.kuducredittracker.AppEntrance.login" >
+45-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:33:9-42:20
+45-->/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:33:19-52
+46
+47            <!--
+48            intent-filter>
+49                <action android:name="android.intent.action.MAIN" />
+50
+51                <category android:name="android.intent.category.LAUNCHER" />
+52            </intent-filter
+53            -->
+54        </activity>
+55
+56        <service
+56-->[net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:18:9-22:19
+57            android:name="net.gotev.uploadservice.UploadService"
+57-->[net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:19:13-65
+58            android:enabled="true"
+58-->[net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:20:13-35
+59            android:exported="false" >
+59-->[net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:21:13-37
+60        </service>
+61    </application>
+62
+63</manifest>

@@ -1,5 +1,7 @@
 <a href="https://circleci.com/gh/The-Combrades/Kudu-Card-Credit-Tracker"><img src="https://circleci.com/gh/The-Combrades/Kudu-Card-Credit-Tracker.svg?style=svg" alt='CircleCi status'></a>
-<a href='https://coveralls.io/github/The-Combrades/Kudu-Card-Credit-Tracker?branch=master'><img src='https://coveralls.io/repos/github/The-Combrades/Kudu-Card-Credit-Tracker/badge.svg?branch=master' alt='Coverage Status' /></a>
+<a href="https://codecov.io/gh/The-Combrades/Kudu-Card-Credit-Tracker">
+  <img src="https://codecov.io/gh/The-Combrades/Kudu-Card-Credit-Tracker/branch/master/graph/badge.svg" />
+</a>
 Kudu Card Tracker
 =====================
 

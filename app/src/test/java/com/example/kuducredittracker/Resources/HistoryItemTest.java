@@ -1,10 +1,10 @@
 package com.example.kuducredittracker.Resources;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class HistoryItemTest {
 
@@ -33,14 +33,14 @@ public class HistoryItemTest {
 
             assertEquals(historyItem.getId(), object.getInt("MARKET_ID"));
             assertEquals(historyItem.getName(), object.getString("NAME"));
-            assertEquals(historyItem.getPrice(), object.getDouble("PRICE"));
+            assertEquals(historyItem.getPrice(), object.getDouble("PRICE"),historyItem.getPrice()-object.getDouble("PRICE"));
             assertEquals(historyItem.getDescription(), object.getString("DESCRIPTION"));
             assertEquals(historyItem.getUrl(), object.getString("IMAGE_URL"));
             assertEquals(historyItem.getItemCategory(), object.getString("CATEGORY"));
 
             historyItem.setRating(0.0f);
             assertNotNull(historyItem.getRating());
-            assertEquals(0.0f, historyItem.getRating());
+            assertEquals(0.0f, historyItem.getRating(),0.0f-historyItem.getRating());
 
             assertNotNull(historyItem);
         }

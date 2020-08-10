@@ -1,0 +1,7 @@
+#Mon Aug 10 15:59:11 SAST 2020
+base.0=/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/build/intermediates/dex/debug/mergeProjectDexDebug/classes.dex

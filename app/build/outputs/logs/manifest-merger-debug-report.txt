@@ -1,0 +1,268 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:2:1-45:12
+MERGED from [androidx.navigation:navigation-ui:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/8a25cebcc8823a55f1a831f811906b13/navigation-ui-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.material:material:1.1.0-beta01] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/1eeeafb1301e09f7a9908936396cdb8d/material-1.1.0-beta01/AndroidManifest.xml:17:1-24:12
+MERGED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:2:1-25:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/01a731039ee1bc9ecbc0afee89bd84da/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/fb271655a822ad1b6e51e8c545fe745c/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4466e57a47620177ae0974267742e0bb/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.navigation:navigation-fragment:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/b46faaa8fdcdd74fd692097023d0840d/navigation-fragment-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.1] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4e05bc1ed9294548e9ed220bf86b9d9e/jetified-volley-1.1.1/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-beta01] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/80247ce91995dc7e53a73fcb03e8460e/coordinatorlayout-1.1.0-beta01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.0.1] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/7cc7cfc4e4b9a9c1d9f3507361cb2865/transition-1.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/8a442e31a3586689e976aa7378324889/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/5d1812f71c239654cb17af1de7026919/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/26dffa03a0ecfc60eaec32317a866977/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0-beta04] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/23650742715de747e2cfb7c398e99526/jetified-viewpager2-1.0.0-beta04/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/c819701e29df9b787218efdf80d3a791/navigation-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/99b2fab5e0291e8a9a0b14457bbe09d1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/19a7ec4692fa5fc8601c79b69604439a/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.loader:loader:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/9b30bf2d435b3cef66ed45d34dc0f863/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/d77b2487d6d028d86560dc3e627f07f2/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-beta04] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/6e723cf290f165b69334f05db9d10a39/recyclerview-1.1.0-beta04/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/7d76b862451a91eb63fd574c8395b89b/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4ce92cfa911a987a9c2ec6beac8ef034/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/11b1fff3c486edd6da957ab427542636/navigation-common-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/2b19e2b527a9734c954309307b97be86/jetified-activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/610fa49abeda4637a1d1eaceb73e7a8e/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/c43ae726b52d1da27416d89c3c018773/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/8e2d18133081a2a2814df1440e6a0992/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/db48659a03d3b837ce0d588adb32798b/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/fd542f26bcde790538775a1677042a9a/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/1f7793b5a0b4fba32d181186f85c4964/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/d2a9157742ec4147af5f0d089ef32452/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/f06e6f3628044d0c80ab2c3024b010b1/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/55f3e8d2f04a2b87df86755afca4e72b/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/c68f301f46ca0ac108a388c5b2992409/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/3243ee8ab91b32add57a5de81e4e2fca/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/83bbd2fcea0e723e59097b348dbb3c62/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/3eba90cb9f70bc1a8e7bb820980a7b35/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:2:1-45:12
+INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:2:1-45:12
+	package
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:3:5-44
+		INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+		INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:2:1-45:12
+		INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:2:1-45:12
+		INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:11:5-67
+MERGED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:7:5-80
+MERGED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:12:5-80
+MERGED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:12:5-80
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:7:22-77
+application
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:9:5-43:19
+MERGED from [com.google.android.material:material:1.1.0-beta01] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/1eeeafb1301e09f7a9908936396cdb8d/material-1.1.0-beta01/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0-beta01] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/1eeeafb1301e09f7a9908936396cdb8d/material-1.1.0-beta01/AndroidManifest.xml:22:5-20
+MERGED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:17:5-23:19
+MERGED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:17:5-23:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4466e57a47620177ae0974267742e0bb/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4466e57a47620177ae0974267742e0bb/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4e05bc1ed9294548e9ed220bf86b9d9e/jetified-volley-1.1.1/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4e05bc1ed9294548e9ed220bf86b9d9e/jetified-volley-1.1.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/610fa49abeda4637a1d1eaceb73e7a8e/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/610fa49abeda4637a1d1eaceb73e7a8e/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/8e2d18133081a2a2814df1440e6a0992/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/8e2d18133081a2a2814df1440e6a0992/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/610fa49abeda4637a1d1eaceb73e7a8e/core-1.1.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:15:9-35
+	android:label
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:13:9-41
+	android:roundIcon
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:14:9-43
+	android:icon
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:12:9-38
+	android:allowBackup
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:16:9-40
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:10:9-46
+activity#com.example.kuducredittracker.Misc.ChangePP
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:17:9-60
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:17:19-48
+activity#com.example.kuducredittracker.AppEntrance.Splash
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:18:9-24:20
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:18:19-53
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:22:27-74
+activity#com.example.kuducredittracker.PurchaseHistory
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:25:9-53
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:25:19-50
+activity#com.example.kuducredittracker.Misc.DisplayItems
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:26:9-55
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:26:19-52
+activity#com.example.kuducredittracker.Misc.Adding_Item
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:27:9-54
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:27:19-51
+activity#com.example.kuducredittracker.item_info
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:28:9-47
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:28:19-44
+activity#com.example.kuducredittracker.HistoryInfo
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:29:9-49
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:29:19-46
+activity#com.example.kuducredittracker.MarketPlace.Marketplace
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:30:9-61
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:30:19-58
+activity#com.example.kuducredittracker.Misc.Profile
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:31:9-50
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:31:19-47
+activity#com.example.kuducredittracker.AppEntrance.register
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:32:9-58
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:32:19-55
+activity#com.example.kuducredittracker.AppEntrance.login
+ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:33:9-42:20
+	android:name
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml:33:19-52
+uses-sdk
+INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+MERGED from [androidx.navigation:navigation-ui:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/8a25cebcc8823a55f1a831f811906b13/navigation-ui-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-ui:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/8a25cebcc8823a55f1a831f811906b13/navigation-ui-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0-beta01] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/1eeeafb1301e09f7a9908936396cdb8d/material-1.1.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0-beta01] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/1eeeafb1301e09f7a9908936396cdb8d/material-1.1.0-beta01/AndroidManifest.xml:20:5-44
+MERGED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:7:5-9:41
+MERGED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/01a731039ee1bc9ecbc0afee89bd84da/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/01a731039ee1bc9ecbc0afee89bd84da/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/fb271655a822ad1b6e51e8c545fe745c/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/fb271655a822ad1b6e51e8c545fe745c/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4466e57a47620177ae0974267742e0bb/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4466e57a47620177ae0974267742e0bb/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.navigation:navigation-fragment:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/b46faaa8fdcdd74fd692097023d0840d/navigation-fragment-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/b46faaa8fdcdd74fd692097023d0840d/navigation-fragment-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.1] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4e05bc1ed9294548e9ed220bf86b9d9e/jetified-volley-1.1.1/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4e05bc1ed9294548e9ed220bf86b9d9e/jetified-volley-1.1.1/AndroidManifest.xml:7:5-43
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-beta01] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/80247ce91995dc7e53a73fcb03e8460e/coordinatorlayout-1.1.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-beta01] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/80247ce91995dc7e53a73fcb03e8460e/coordinatorlayout-1.1.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.0.1] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/7cc7cfc4e4b9a9c1d9f3507361cb2865/transition-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.1] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/7cc7cfc4e4b9a9c1d9f3507361cb2865/transition-1.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/8a442e31a3586689e976aa7378324889/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/8a442e31a3586689e976aa7378324889/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/5d1812f71c239654cb17af1de7026919/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/5d1812f71c239654cb17af1de7026919/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/26dffa03a0ecfc60eaec32317a866977/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/26dffa03a0ecfc60eaec32317a866977/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0-beta04] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/23650742715de747e2cfb7c398e99526/jetified-viewpager2-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0-beta04] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/23650742715de747e2cfb7c398e99526/jetified-viewpager2-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/c819701e29df9b787218efdf80d3a791/navigation-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/c819701e29df9b787218efdf80d3a791/navigation-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/99b2fab5e0291e8a9a0b14457bbe09d1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/99b2fab5e0291e8a9a0b14457bbe09d1/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/19a7ec4692fa5fc8601c79b69604439a/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/19a7ec4692fa5fc8601c79b69604439a/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/9b30bf2d435b3cef66ed45d34dc0f863/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/9b30bf2d435b3cef66ed45d34dc0f863/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/d77b2487d6d028d86560dc3e627f07f2/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/d77b2487d6d028d86560dc3e627f07f2/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-beta04] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/6e723cf290f165b69334f05db9d10a39/recyclerview-1.1.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-beta04] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/6e723cf290f165b69334f05db9d10a39/recyclerview-1.1.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/7d76b862451a91eb63fd574c8395b89b/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/7d76b862451a91eb63fd574c8395b89b/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4ce92cfa911a987a9c2ec6beac8ef034/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/4ce92cfa911a987a9c2ec6beac8ef034/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/11b1fff3c486edd6da957ab427542636/navigation-common-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/11b1fff3c486edd6da957ab427542636/navigation-common-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/2b19e2b527a9734c954309307b97be86/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/2b19e2b527a9734c954309307b97be86/jetified-activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/610fa49abeda4637a1d1eaceb73e7a8e/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/610fa49abeda4637a1d1eaceb73e7a8e/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/c43ae726b52d1da27416d89c3c018773/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/c43ae726b52d1da27416d89c3c018773/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/8e2d18133081a2a2814df1440e6a0992/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/8e2d18133081a2a2814df1440e6a0992/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/db48659a03d3b837ce0d588adb32798b/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/db48659a03d3b837ce0d588adb32798b/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/fd542f26bcde790538775a1677042a9a/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/fd542f26bcde790538775a1677042a9a/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/1f7793b5a0b4fba32d181186f85c4964/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/1f7793b5a0b4fba32d181186f85c4964/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/d2a9157742ec4147af5f0d089ef32452/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/d2a9157742ec4147af5f0d089ef32452/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/f06e6f3628044d0c80ab2c3024b010b1/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/f06e6f3628044d0c80ab2c3024b010b1/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/55f3e8d2f04a2b87df86755afca4e72b/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/55f3e8d2f04a2b87df86755afca4e72b/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/c68f301f46ca0ac108a388c5b2992409/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/c68f301f46ca0ac108a388c5b2992409/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/3243ee8ab91b32add57a5de81e4e2fca/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/3243ee8ab91b32add57a5de81e4e2fca/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/83bbd2fcea0e723e59097b348dbb3c62/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/83bbd2fcea0e723e59097b348dbb3c62/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/3eba90cb9f70bc1a8e7bb820980a7b35/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/3eba90cb9f70bc1a8e7bb820980a7b35/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+		INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+		ADDED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+		INJECTED from /home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:13:22-78
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:14:5-68
+	android:name
+		ADDED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:14:22-65
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:15:5-77
+	android:name
+		ADDED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:15:22-74
+service#net.gotev.uploadservice.UploadService
+ADDED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:18:9-22:19
+	android:enabled
+		ADDED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:20:13-35
+	android:exported
+		ADDED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from [net.gotev:uploadservice:3.5.2] /home/siyabonga/.gradle/caches/transforms-2/files-2.1/0a5b40264f45ce4ae9114c185d8bdfbc/jetified-uploadservice-3.5.2/AndroidManifest.xml:19:13-65
