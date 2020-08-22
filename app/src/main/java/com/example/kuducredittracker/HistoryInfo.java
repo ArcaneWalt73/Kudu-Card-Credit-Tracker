@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +43,9 @@ public class HistoryInfo extends AppCompatActivity {
     private ImageLoader imageLoader;
     RatingBar ratingBar;
 
+    private EditText review;
+    private String reviewS;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +56,7 @@ public class HistoryInfo extends AppCompatActivity {
         tv_date = findViewById(R.id.hist_info_date);
         imageView = findViewById(R.id.hist_info_item_img);
         ratingBar = findViewById(R.id.hist_info_rating_bar);
+        review = (EditText) findViewById(R.id.itemReview);
 
         Intent parent = getIntent();
 
@@ -113,22 +119,36 @@ public class HistoryInfo extends AppCompatActivity {
         float rating = ratingBar.getRating();
         System.err.println("Check 10 == "+rating);
 
-        appendRating(this, this.id,rating);
+
 
         System.err.println("Check 12 == done ");
 
+
+        if(review.getText().toString().trim().isEmpty()){
+            appendRating(this, this.id,rating,"");
+            System.err.println("Check 14 == noting");
+        }else{
+            reviewS = review.getText().toString().trim();
+            appendRating(this, this.id,rating,reviewS);
+            System.err.println(reviewS);
+            review.setText("");
+        }
+        System.err.println("Check 14 == done done");
+
     }
 
-    public static void appendRating(final Context context, Integer item_id, float rating)//rating system from 0-5(o worst 5 best)
+    public static void appendRating(final Context context, Integer item_id, float rating, String review)//rating system from 0-5(o worst 5 best)
     {
         ContentValues params = new ContentValues();
         String rate_url = "https://lamp.ms.wits.ac.za/~s1965919/Rating.php";
 
         String labelRating = "numberStars";
         String labelId = "itemId";
+        String labelReview = "review";
 
         params.put(labelRating, rating);
         params.put(labelId, item_id);
+        params.put(labelReview, review);
 
         final Float[] resultRating = {-1f};
 

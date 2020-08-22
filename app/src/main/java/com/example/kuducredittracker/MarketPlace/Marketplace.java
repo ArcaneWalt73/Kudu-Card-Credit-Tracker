@@ -75,6 +75,7 @@ public class Marketplace extends AppCompatActivity {
                 main.putExtra("category", item.getItemCategory());
                 main.putExtra("description", item.getDescription());
                 main.putExtra("rating", item.getRating());
+                main.putExtra("reviews", item.getReviews());
                 getApplicationContext().startActivity(main);
             }
         });
@@ -131,7 +132,8 @@ public class Marketplace extends AppCompatActivity {
                         String url = jo.getString("IMAGE_URL");
                         String category = jo.getString("CATEGORY");
                         float rating = Float.parseFloat(jo.getString("RATING"));
-                        items.add(new Item(id, name, price, category, description, url, rating));
+                        String reviews = jo.getString("REVIEWS");
+                        items.add(new Item(id, name, price, category, description, url, rating, reviews));
                     }
                     setGridviewItems(items);
                 }catch(Exception e)

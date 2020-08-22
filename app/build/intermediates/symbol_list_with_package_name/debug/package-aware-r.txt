@@ -1635,9 +1635,11 @@ id info_desc
 id info_item_img
 id info_price
 id info_rating_bar
+id info_review
 id invisible
 id italic
 id itemName
+id itemReview
 id item_rating_bar
 id item_touch_helper_previous_elevation
 id kudu

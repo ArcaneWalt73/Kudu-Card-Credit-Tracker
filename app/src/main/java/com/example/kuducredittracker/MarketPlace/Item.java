@@ -5,7 +5,7 @@ public class Item {
 	private String name, itemCategory;
 	private Double price;
 	private Float rating; //price and rating(0 - 5)
-	String url, Description;
+	String url, Description, reviews;
 
 	//This constructor is for when item already has a rating
 	public Item(int id, String ItemName, double ItemPrice,String itemCategory, String Description, String url)
@@ -20,7 +20,7 @@ public class Item {
 	}
 
 	//This constructor is for when item already has a rating
-	public Item(int id, String ItemName, double ItemPrice,String itemCategory, String Description, String url, Float rating)
+	public Item(int id, String ItemName, double ItemPrice,String itemCategory, String Description, String url, Float rating, String reviews)
 	{
 		this.id = id;
 		this.name = ItemName;
@@ -29,6 +29,7 @@ public class Item {
 		this.itemCategory = itemCategory;
 		this.url = url;
 		this.Description = Description;
+		this.reviews = reviews;
 	}
 
 	public double getPrice() {
@@ -61,5 +62,6 @@ public class Item {
 		return name;
 	}
 	public String getItemCategory(){return itemCategory;}
+	public String getReviews(){return reviews;}
 }
 

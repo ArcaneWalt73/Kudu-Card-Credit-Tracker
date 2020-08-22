@@ -30,9 +30,11 @@ public class item_info extends AppCompatActivity {
     private String category;
     private String description;
     private Float rating;
+    private String reviews;
 
     private TextView tv_price;
     private TextView tv_desc;
+    private TextView tv_reviews;
 
     private NetworkImageView imageView;
     private ImageLoader imageLoader;
@@ -47,6 +49,7 @@ public class item_info extends AppCompatActivity {
         tv_desc = findViewById(R.id.info_desc);
         imageView = findViewById(R.id.info_item_img);
         ratingBar = findViewById(R.id.info_rating_bar);
+        tv_reviews = findViewById(R.id.info_review);
 
         Intent parent = getIntent();
         System.err.println("Check 1");
@@ -89,6 +92,25 @@ public class item_info extends AppCompatActivity {
         }
 
         System.err.println("Check 8");
+
+        if (parent.hasExtra("reviews")) {
+            reviews = parent.getStringExtra("reviews");
+            String reviews_arr[] = reviews.split("   ");
+            StringBuilder freviews = new StringBuilder("");
+
+            if(reviews_arr.length == 1){
+                freviews.append(reviews_arr[0]);
+            }else {
+
+                for (int i = 1; i < reviews_arr.length; ++i) {
+                    freviews.append("-->");
+                    freviews.append(reviews_arr[i]);
+                    freviews.append("\n");
+                    freviews.append("\n");
+                }
+            }
+            tv_reviews.setText(freviews);
+        }
 
 
         loadImage();

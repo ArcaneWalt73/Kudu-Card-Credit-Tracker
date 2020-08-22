@@ -344,12 +344,12 @@
         "source": "/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/build/intermediates/res/merged/debug/layout_activity_login.xml.flat",
-        "source": "/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/res/layout/activity_login.xml"
-    },
-    {
         "merged": "/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/build/intermediates/res/merged/debug/mipmap-mdpi_test.png.flat",
         "source": "/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/res/mipmap-mdpi/test.png"
+    },
+    {
+        "merged": "/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/build/intermediates/res/merged/debug/layout_activity_login.xml.flat",
+        "source": "/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/src/main/res/layout/activity_login.xml"
     },
     {
         "merged": "/home/siyabonga/Desktop/Kudu-Card-Credit-Tracker/app/build/intermediates/res/merged/debug/drawable-v24_pp.png.flat",
