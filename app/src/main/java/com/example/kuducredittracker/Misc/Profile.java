@@ -81,11 +81,10 @@ public class Profile extends AppCompatActivity {
 
         }
 
-        loadImage();
-
         /////
 
         // Retrive other information from Server
+        loadImage();
 
         /////
         refreshCreditText = new CountDownTimer(20000, 1000) {
