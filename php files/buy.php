@@ -1,4 +1,5 @@
 <?php
+
 $username = "s1965919";
 $password = "ICTPass1670";
 $database = "d1965919";
